@@ -1,0 +1,59 @@
+import dependencies.Dependency
+import dependencies.Version
+
+plugins {
+    id("com.android.application")
+    id("kotlin-android")
+}
+
+android {
+    compileSdkVersion Version.compileSdkVersion
+
+    defaultConfig {
+        applicationId "dohun.kim.yuqi.yuqi.androidApp"
+        minSdkVersion Version.minSdkVersion
+        targetSdkVersion Version.targetSdkVersion
+
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        compose = true
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        useIR = true
+    }
+
+    composeOptions {
+        kotlinCompilerVersion Dependency.Kotlin.version
+        kotlinCompilerExtensionVersion Dependency.AndroidX.Compose.version
+    }
+}
+
+dependencies {
+    implementation Dependency.material
+
+    implementation Dependency.AndroidX.appCompat
+
+    implementation Dependency.AndroidX.Compose.ui
+    implementation Dependency.AndroidX.Compose.tooling
+    implementation Dependency.AndroidX.Compose.foundation
+    implementation Dependency.AndroidX.Compose.material
+    implementation Dependency.AndroidX.Compose.liveData
+
+
+}

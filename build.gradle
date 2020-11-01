@@ -1,0 +1,24 @@
+import dependencies.Dependency
+
+buildscript {
+    repositories {
+        jcenter()
+        google()
+        maven { url "https://jitpack.io" }
+    }
+    dependencies {
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Dependency.Kotlin.version}")
+        classpath("com.android.tools.build:gradle:4.2.0-alpha15")
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
