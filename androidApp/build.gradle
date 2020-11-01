@@ -14,8 +14,8 @@ android {
         minSdkVersion Version.minSdkVersion
         targetSdkVersion Version.targetSdkVersion
 
-        versionCode 1
-        versionName "1.0"
+        versionCode Version.versionCode
+        versionName Version.versionName
     }
     buildTypes {
         release {
@@ -47,6 +47,11 @@ android {
 dependencies {
     implementation Dependency.material
 
+    implementation Dependency.Kinda.core
+    implementation Dependency.Kinda.dsl
+    implementation Dependency.Kinda.android
+    implementation Dependency.Kinda.compose
+
     implementation Dependency.AndroidX.appCompat
 
     implementation Dependency.AndroidX.Compose.ui
@@ -55,5 +60,7 @@ dependencies {
     implementation Dependency.AndroidX.Compose.material
     implementation Dependency.AndroidX.Compose.liveData
 
+    implementation Dependency.AndroidX.Navigation.compose
 
+    testImplementation Dependency.Test.kinda
 }

@@ -23,7 +23,9 @@ object Dependency {
             const val liveData = "androidx.compose.runtime:runtime-livedata:$version"
         }
 
-
+        object Navigation {
+            const val compose = "androidx.navigation:navigation-compose:1.0.0-alpha01"
+        }
     }
 
     object Kinda {
