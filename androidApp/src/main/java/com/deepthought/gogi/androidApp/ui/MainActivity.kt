@@ -10,6 +10,7 @@ import com.deepthought.gogi.androidApp.ui.theme.GogiTheme
 import com.deepthought.gogi.androidApp.ui.home.HomePage
 import com.deepthought.gogi.androidApp.ui.inputName.InputNamePage
 import com.deepthought.gogi.androidApp.ui.inputName.InputNameViewModel
+import com.deepthought.gogi.androidApp.ui.splash.SplashPage
 import org.koin.androidx.compose.getViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -21,13 +22,14 @@ class MainActivity : AppCompatActivity() {
                 val navController = rememberNavController()
                 NavHost(
                     navController = navController,
-                    startDestination = "inputName",
+                    startDestination = "splash",
                 ) {
+                    composable("splash") {
+                        SplashPage(viewModel = getViewModel(), navController = navController)
+                    }
+
                     composable("inputName") {
-                        InputNamePage(
-                            viewModel = getViewModel(),
-                            navController = navController
-                        )
+                        InputNamePage(viewModel = getViewModel(), navController = navController)
                     }
 
                     composable("home") { HomePage() }

@@ -31,7 +31,7 @@ object Dependency {
     }
 
     object Kinda {
-        const val version = "1.3.0-beta5"
+        const val version = "1.3.0-beta6"
 
         const val core = "com.github.kimdohun0104.kinda:kinda-core:$version"
         const val dsl = "com.github.kimdohun0104.kinda:kinda-dsl:$version"
