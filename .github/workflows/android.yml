@@ -35,6 +35,9 @@ jobs:
         key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
         restore-keys: ${{ runner.os }}-gradle
 
+    - name: Memory limit
+      run: echo "org.gradle.jvmargs=-Xmx1024m -XX:MaxPermSize=1024m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8" > gradle.properties
+
     - name: Run build
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
