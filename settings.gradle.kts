@@ -13,7 +13,7 @@ pluginManagement {
         }
     }
 }
-rootProject.name = "Yuqi"
+rootProject.name = "Gogi"
 
 
 include(":androidApp")
