@@ -18,7 +18,7 @@ jobs:
         java-version: 1.8
 
     - name: Build Test
-      run: ./gradlew assembleDebug jacocoTestReport sonarqube
+      run: ./gradlew assembleDebug jacocoTestReport
 
     - name: Analyze code
       run: ./gradlew sonarqube -Dsonar.host.url=https://sonarcloud.io
