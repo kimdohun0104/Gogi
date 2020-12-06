@@ -1,0 +1,29 @@
+plugins {
+    id("kotlin-multiplatform")
+    id("com.android.library")
+}
+
+apply from: rootProject.file('gradle/android.gradle')
+
+kotlin {
+    android()
+    ios {
+        binaries {
+            framework {
+                baseName = "preference"
+            }
+        }
+    }
+    sourceSets {
+        commonMain.dependencies {
+
+        }
+
+        androidMain.dependencies {
+
+        }
+
+        iosMain.dependencies {
+        }
+    }
+}

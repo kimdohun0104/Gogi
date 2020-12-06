@@ -18,3 +18,4 @@ rootProject.name = "Yuqi"
 
 include(":androidApp")
 include(":local")
+include(":preference")

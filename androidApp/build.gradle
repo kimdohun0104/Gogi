@@ -10,7 +10,7 @@ android {
     compileSdkVersion Version.compileSdkVersion
 
     defaultConfig {
-        applicationId "dohun.kim.yuqi.yuqi.androidApp"
+        applicationId "com.deepthought.gogi.androidApp"
         minSdkVersion Version.minSdkVersion
         targetSdkVersion Version.targetSdkVersion
 
@@ -45,12 +45,16 @@ android {
 }
 
 dependencies {
+    implementation project(':preference')
+
+    implementation Dependency.timber
     implementation Dependency.material
 
+    implementation Dependency.Koin.compose
+
     implementation Dependency.Kinda.core
-    implementation Dependency.Kinda.dsl
     implementation Dependency.Kinda.android
-    implementation Dependency.Kinda.compose
+    implementation Dependency.Kinda.dsl
 
     implementation Dependency.AndroidX.appCompat
 
@@ -62,5 +66,7 @@ dependencies {
 
     implementation Dependency.AndroidX.Navigation.compose
 
+    testImplementation Dependency.Test.junit
+    testImplementation Dependency.Test.mockito
     testImplementation Dependency.Test.kinda
 }
