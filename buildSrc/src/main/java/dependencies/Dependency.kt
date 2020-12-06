@@ -12,6 +12,7 @@ object Dependency {
 
     object AndroidX {
 
+        const val startup = "androidx.startup:startup-runtime:1.0.0"
         const val appCompat = "androidx.appcompat:appcompat:1.2.0"
 
         object Compose {
