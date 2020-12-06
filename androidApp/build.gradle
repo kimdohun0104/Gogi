@@ -2,9 +2,9 @@ import dependencies.Dependency
 import dependencies.Version
 
 plugins {
+    id "org.sonarqube" version "3.0"
     id "com.android.application"
     id "kotlin-android"
-    id "org.sonarqube" version "3.0"
 }
 
 apply from: rootProject.file('gradle/jacoco.gradle')
