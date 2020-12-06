@@ -2,7 +2,7 @@ name: Android CI
 
 on:
   push:
-    branches: [ master, test ]
+    branches: [ master ]
   pull_request:
     branches: [ master ]
 
@@ -36,7 +36,7 @@ jobs:
         restore-keys: ${{ runner.os }}-gradle
 
     - name: Memory limit
-      run: echo "org.gradle.jvmargs=-Xmx1024m -XX:MaxPermSize=1024m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8" > gradle.properties
+      run: echo "org.gradle.jvmargs=-Xmx1024m -XX:MaxPermSize=1024m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8" >> gradle.properties
 
     - name: Run build
       env:
