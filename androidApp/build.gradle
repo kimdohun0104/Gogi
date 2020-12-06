@@ -6,6 +6,8 @@ plugins {
     id("kotlin-android")
 }
 
+apply from: rootProject.file('gradle/jacoco.gradle')
+
 android {
     compileSdkVersion Version.compileSdkVersion
 

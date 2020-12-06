@@ -1,0 +1,32 @@
+apply plugin: 'jacoco'
+
+jacoco {
+    toolVersion = "0.8.6"
+}
+
+tasks.withType(Test) {
+    jacoco.excludes = ['jdk.internal.*']
+}
+
+task jacocoTestReport(
+        type: JacocoReport,
+        dependsOn: ['testDebugUnitTest']
+) {
+    reports {
+        csv.enabled false
+        xml.enabled true
+        html.enabled true
+    }
+
+    def debugTree = fileTree(
+            dir: "$buildDir/tmp/kotlin-classes/debug",
+            includes: ['**/*ViewModel.*']
+    )
+    def mainSrc = "$projectDir/src/main/java"
+    sourceDirectories.from = files([mainSrc])
+    classDirectories.from = files([debugTree])
+    executionData.from = fileTree(
+            dir: project.buildDir,
+            includes: ['**/*.exec', '**/*.ec']
+    )
+}
