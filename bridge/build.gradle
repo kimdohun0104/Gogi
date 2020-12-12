@@ -1,0 +1,28 @@
+plugins {
+    id("kotlin-multiplatform")
+    id("com.android.library")
+}
+
+apply from: rootProject.file('gradle/shared.gradle')
+
+kotlin {
+    android()
+    ios {
+        binaries {
+            framework {
+                baseName = "bridge"
+            }
+        }
+    }
+    sourceSets {
+        commonMain.dependencies {
+            implementation project(':data:preference')
+        }
+        androidMain.dependencies {
+
+        }
+        iosMain.dependencies {
+
+        }
+    }
+}

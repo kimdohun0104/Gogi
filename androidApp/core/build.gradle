@@ -1,0 +1,26 @@
+import dependencies.Dependency
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+apply from: rootProject.file('gradle/android.gradle')
+
+dependencies {
+    api project(':bridge')
+
+    api Dependency.timber
+
+    api Dependency.Kinda.core
+    api Dependency.Kinda.android
+    api Dependency.Kinda.dsl
+
+    api Dependency.AndroidX.Compose.ui
+    api Dependency.AndroidX.Compose.tooling
+    api Dependency.AndroidX.Compose.foundation
+    api Dependency.AndroidX.Compose.material
+    api Dependency.AndroidX.Compose.liveData
+
+    api Dependency.AndroidX.Navigation.compose
+}

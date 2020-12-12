@@ -46,6 +46,7 @@ object Dependency {
     object Test {
         const val junit = "junit:junit:4.13.1"
         const val mockito = "org.mockito:mockito-core:3.6.28"
+        const val mockitoInline = "org.mockito:mockito-inline:3.6.28"
         const val kinda = "com.github.kimdohun0104.kinda:kinda-android-test:${Kinda.version}"
     }
 }

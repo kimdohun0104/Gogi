@@ -17,5 +17,12 @@ rootProject.name = "Gogi"
 
 
 include(":androidApp")
-include(":local")
-include(":preference")
+include(":androidApp:feature:splash")
+
+include(":bridge")
+
+include(":data:local")
+include(":data:preference")
+include(":androidApp:core")
+include(":androidApp:feature:inputName")
+include(":androidApp:feature:home")

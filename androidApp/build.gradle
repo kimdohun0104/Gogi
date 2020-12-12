@@ -7,8 +7,6 @@ plugins {
     id "kotlin-android"
 }
 
-apply from: rootProject.file('gradle/jacoco.gradle')
-
 sonarqube {
     properties {
         property "sonar.projectKey", "kimdohun0104_Gogi"
@@ -35,6 +33,16 @@ android {
         }
     }
 
+    testOptions {
+        unitTests.all {
+            testLogging {
+                events "passed", "skipped", "failed", "standardOut", "standardError"
+                outputs.upToDateWhen {false}
+                showStandardStreams = true
+            }
+        }
+    }
+
     buildFeatures {
         compose = true
     }
@@ -56,7 +64,15 @@ android {
 }
 
 dependencies {
-    implementation project(':preference')
+    implementation project(':androidApp:core')
+
+    implementation project(':bridge')
+
+    implementation project(':data:preference')
+
+    implementation project(':androidApp:feature:splash')
+    implementation project(':androidApp:feature:inputName')
+    implementation project(':androidApp:feature:home')
 
     implementation Dependency.timber
     implementation Dependency.material

@@ -11,9 +11,16 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/androidApp" />
+            <option value="$PROJECT_DIR$/androidApp/core" />
+            <option value="$PROJECT_DIR$/androidApp/feature" />
+            <option value="$PROJECT_DIR$/androidApp/feature/home" />
+            <option value="$PROJECT_DIR$/androidApp/feature/inputName" />
+            <option value="$PROJECT_DIR$/androidApp/feature/splash" />
+            <option value="$PROJECT_DIR$/bridge" />
             <option value="$PROJECT_DIR$/buildSrc" />
-            <option value="$PROJECT_DIR$/local" />
-            <option value="$PROJECT_DIR$/preference" />
+            <option value="$PROJECT_DIR$/data" />
+            <option value="$PROJECT_DIR$/data/local" />
+            <option value="$PROJECT_DIR$/data/preference" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
