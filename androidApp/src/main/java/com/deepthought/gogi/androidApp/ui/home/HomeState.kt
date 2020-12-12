@@ -5,7 +5,10 @@ import dohun.kim.kinda.kinda_core.KindaSideEffect
 import dohun.kim.kinda.kinda_core.KindaState
 
 data class HomeState(
-    val temp: String = ""
+    val userName: String = "",
+    val totalExpenditure: Long = 0L,
+
+    val hasNewNotification: Boolean = false
 ) : KindaState
 
 sealed class HomeEvent : KindaEvent {

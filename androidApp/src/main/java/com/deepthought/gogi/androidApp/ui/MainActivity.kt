@@ -32,7 +32,9 @@ class MainActivity : AppCompatActivity() {
                         InputNamePage(viewModel = getViewModel(), navController = navController)
                     }
 
-                    composable("home") { HomePage() }
+                    composable("home") {
+                        HomePage(viewModel = getViewModel(), navController = navController)
+                    }
                 }
             }
         }

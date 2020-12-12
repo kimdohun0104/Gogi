@@ -3,6 +3,8 @@ package com.deepthought.gogi.androidApp.ui.theme
 import androidx.compose.material.*
 import androidx.compose.ui.graphics.Color
 
+val colorRed500 = Color(0xFFF44336)
+
 val colorGray600 = Color(0xFF757575)
 
 val DarkColors = darkColors(
