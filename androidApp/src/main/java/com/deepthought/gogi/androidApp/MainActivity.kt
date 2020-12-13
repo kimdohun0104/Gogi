@@ -6,7 +6,7 @@ import androidx.compose.ui.platform.setContent
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.deepthought.gogi.androidApp.ui.theme.GogiTheme
+import com.deepghought.core.theme.GogiTheme
 import com.deepthought.home.HomePage
 import com.deepthought.inputname.InputNamePage
 import com.deepthought.splash.SplashPage

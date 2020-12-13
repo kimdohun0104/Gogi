@@ -12,8 +12,8 @@ import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.SpanStyleRange
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
-import com.deepghought.core.state
-import com.deepghought.core.toDefaultPriceFormat
+import com.deepghought.core.ext.state
+import com.deepghought.core.ext.toDefaultPriceFormat
 import com.deepthought.home.HomeState
 import com.deepthought.home.HomeViewModel
 import com.deepthought.home.R

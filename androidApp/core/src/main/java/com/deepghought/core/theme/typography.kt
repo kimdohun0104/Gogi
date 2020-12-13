@@ -1,4 +1,4 @@
-package com.deepthought.gogi.androidApp.ui.theme
+package com.deepghought.core.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
@@ -16,13 +16,13 @@ val gogiTypography = Typography(
     )
 )
 
-fun paragraph(): TextStyle =
+fun Typography.paragraph(): TextStyle =
     TextStyle(
         fontWeight = FontWeight.Bold,
         fontSize = 16.sp
     )
 
-fun paragraphRegular(): TextStyle =
+fun Typography.paragraphRegular(): TextStyle =
     TextStyle(
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp

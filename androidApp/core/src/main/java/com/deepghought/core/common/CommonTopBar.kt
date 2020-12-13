@@ -8,7 +8,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
-import com.deepthought.gogi.androidApp.ui.theme.*
+import com.deepghought.core.theme.black
+import com.deepghought.core.theme.colorGray600
+import com.deepghought.core.theme.paragraph
+import com.deepghought.core.theme.topAppBar
 
 @Composable
 fun CommonTopBar(
@@ -37,7 +40,7 @@ fun CommonTopBar(
 private fun CommonTopAppBarTitleText(title: String) {
     Text(
         title,
-        style = paragraph()
+        style = MaterialTheme.typography.paragraph()
     )
 }
 

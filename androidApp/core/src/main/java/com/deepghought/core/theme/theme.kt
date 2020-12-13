@@ -1,4 +1,4 @@
-package com.deepthought.gogi.androidApp.ui.theme
+package com.deepghought.core.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

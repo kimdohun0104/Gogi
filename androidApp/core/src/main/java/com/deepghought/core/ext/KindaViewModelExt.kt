@@ -1,4 +1,4 @@
-package com.deepghought.core
+package com.deepghought.core.ext
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.livedata.observeAsState

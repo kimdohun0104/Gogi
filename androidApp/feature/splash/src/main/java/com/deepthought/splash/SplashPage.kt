@@ -10,8 +10,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import androidx.navigation.compose.navigate
-import com.deepghought.core.event
-import com.deepthought.gogi.androidApp.ui.theme.black
+import com.deepghought.core.ext.event
+import com.deepghought.core.theme.black
 
 @Composable
 fun SplashPage(
