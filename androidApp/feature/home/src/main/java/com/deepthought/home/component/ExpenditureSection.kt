@@ -66,13 +66,13 @@ private fun ExpenditureSectionHeader(
     Row(modifier = Modifier.padding(horizontal = 36.dp)) {
         Text(
             text = title,
-            style = MaterialTheme.typography.paragraph(),
+            style = MaterialTheme.typography.paragraph,
             modifier = Modifier.weight(1f)
         )
         Text(
             text = "총 ${totalPrice.toDefaultPriceFormat()}원",
             style = MaterialTheme.typography
-                .paragraph()
+                .paragraph
                 .copy(color = MaterialTheme.colors.primary)
         )
     }
@@ -86,18 +86,18 @@ private fun ExpenditureDateSection(
 ) {
     Text(
         text = "${paymentDate}일",
-        style = MaterialTheme.typography.paragraphRegular()
+        style = MaterialTheme.typography.paragraphRegular
     )
     expenditures.forEach {
         Row {
             Text(
                 text = it.name,
-                style = MaterialTheme.typography.paragraph(),
+                style = MaterialTheme.typography.paragraph,
                 modifier = Modifier.weight(1f)
             )
             Text(
                 text = "${it.price.toDefaultPriceFormat()} 원",
-                style = MaterialTheme.typography.paragraphRegular()
+                style = MaterialTheme.typography.paragraphRegular
             )
         }
     }

@@ -73,6 +73,7 @@ dependencies {
     implementation project(':androidApp:feature:splash')
     implementation project(':androidApp:feature:inputName')
     implementation project(':androidApp:feature:home')
+    implementation project(':androidApp:feature:notification')
 
     implementation Dependency.timber
     implementation Dependency.material

@@ -1,5 +1,6 @@
 package com.deepthought.home.component
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
@@ -12,6 +13,8 @@ import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.SpanStyleRange
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
+import androidx.navigation.NavController
+import androidx.navigation.compose.navigate
 import com.deepghought.core.ext.state
 import com.deepghought.core.ext.toDefaultPriceFormat
 import com.deepthought.home.HomeState
@@ -19,7 +22,10 @@ import com.deepthought.home.HomeViewModel
 import com.deepthought.home.R
 
 @Composable
-fun HomeHeader(viewModel: HomeViewModel) {
+fun HomeHeader(
+    viewModel: HomeViewModel,
+    navController: NavController
+) {
     val state = viewModel.state()
 
     ConstraintLayout(
@@ -28,7 +34,7 @@ fun HomeHeader(viewModel: HomeViewModel) {
         val (headerTitle, editBtn, notificationBtn) = createRefs()
 
         HomeHeaderTitle(state, headerTitle)
-        HomeHeaderNotification(notificationBtn)
+        HomeHeaderNotification(notificationBtn, navController)
         HomeHeaderEdit(editBtn, notificationBtn)
     }
 }
@@ -76,7 +82,8 @@ private fun ConstraintLayoutScope.HomeHeaderTitle(
 
 @Composable
 fun ConstraintLayoutScope.HomeHeaderNotification(
-    notificationBtnRef: ConstrainedLayoutReference
+    notificationBtnRef: ConstrainedLayoutReference,
+    navController: NavController
 ) {
     Icon(
         asset = vectorResource(id = R.drawable.ic_notification),
@@ -85,6 +92,7 @@ fun ConstraintLayoutScope.HomeHeaderNotification(
             top.linkTo(parent.top)
             bottom.linkTo(parent.bottom)
         }.zIndex(0f)
+            .clickable(onClick = { navController.navigate("notification") })
     )
 }
 

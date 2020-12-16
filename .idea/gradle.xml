@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/androidApp/feature" />
             <option value="$PROJECT_DIR$/androidApp/feature/home" />
             <option value="$PROJECT_DIR$/androidApp/feature/inputName" />
+            <option value="$PROJECT_DIR$/androidApp/feature/notification" />
             <option value="$PROJECT_DIR$/androidApp/feature/splash" />
             <option value="$PROJECT_DIR$/bridge" />
             <option value="$PROJECT_DIR$/buildSrc" />

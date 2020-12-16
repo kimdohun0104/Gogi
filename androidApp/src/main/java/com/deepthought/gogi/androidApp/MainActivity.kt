@@ -9,6 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import com.deepghought.core.theme.GogiTheme
 import com.deepthought.home.HomePage
 import com.deepthought.inputname.InputNamePage
+import com.deepthought.notification.NotificationPage
 import com.deepthought.splash.SplashPage
 import org.koin.androidx.compose.getViewModel
 
@@ -33,6 +34,10 @@ class MainActivity : AppCompatActivity() {
 
                     composable("home") {
                         HomePage(viewModel = getViewModel(), navController = navController)
+                    }
+
+                    composable("notification") {
+                        NotificationPage(viewModel = getViewModel(), navController = navController)
                     }
                 }
             }

@@ -17,7 +17,7 @@ fun HomePage(
     navController: NavController
 ) {
     ScrollableColumn {
-        HomeHeader(viewModel)
+        HomeHeader(viewModel, navController)
         ExpenditureSection(
             title = "오늘 납부 예정",
             totalPrice = 100000,

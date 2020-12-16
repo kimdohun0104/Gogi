@@ -1,0 +1,17 @@
+import dependencies.Dependency
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+apply from: rootProject.file('gradle/android.gradle')
+
+dependencies {
+    implementation project(':androidApp:core')
+
+    testImplementation Dependency.Test.junit
+    testImplementation Dependency.Test.mockito
+    testImplementation Dependency.Test.mockitoInline
+    testImplementation Dependency.Test.kinda
+}

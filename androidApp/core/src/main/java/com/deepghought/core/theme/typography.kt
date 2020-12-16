@@ -6,7 +6,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
 val gogiTypography = Typography(
-    h1= TextStyle(
+    h1 = TextStyle(
         fontWeight = FontWeight.Bold,
         fontSize = 24.sp
     ),
@@ -16,14 +16,22 @@ val gogiTypography = Typography(
     )
 )
 
-fun Typography.paragraph(): TextStyle =
-    TextStyle(
+val Typography.paragraph: TextStyle
+    get() = TextStyle(
         fontWeight = FontWeight.Bold,
         fontSize = 16.sp
     )
 
-fun Typography.paragraphRegular(): TextStyle =
-    TextStyle(
+
+val Typography.paragraphRegular: TextStyle
+    get() = TextStyle(
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp
+    )
+
+
+val Typography.captionRegular: TextStyle
+    get() = TextStyle(
+        fontWeight = FontWeight.Normal,
+        fontSize = 12.sp
     )

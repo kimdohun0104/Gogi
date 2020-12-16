@@ -59,7 +59,7 @@ private fun InputNameTextField(viewModel: InputNameViewModel) {
         maxLines = 1,
         modifier = Modifier.fillMaxWidth(),
         value = state.name,
-        textStyle = MaterialTheme.typography.paragraphRegular(),
+        textStyle = MaterialTheme.typography.paragraphRegular,
         label = { Text(text = "이름") },
         onValueChange = {
             viewModel.intent(InputNameEvent.OnEnterName(it))
