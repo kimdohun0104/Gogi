@@ -35,7 +35,7 @@ fun HomeHeader(
 
         HomeHeaderTitle(state, headerTitle)
         HomeHeaderNotification(notificationBtn, navController)
-        HomeHeaderEdit(editBtn, notificationBtn)
+        HomeHeaderEdit(editBtn, notificationBtn, navController)
     }
 }
 
@@ -99,7 +99,8 @@ fun ConstraintLayoutScope.HomeHeaderNotification(
 @Composable
 fun ConstraintLayoutScope.HomeHeaderEdit(
     editBtnRef: ConstrainedLayoutReference,
-    notificationBtnRef: ConstrainedLayoutReference
+    notificationBtnRef: ConstrainedLayoutReference,
+    navController: NavController
 ) {
 
     Icon(
@@ -108,7 +109,9 @@ fun ConstraintLayoutScope.HomeHeaderEdit(
             end.linkTo(notificationBtnRef.start)
             top.linkTo(notificationBtnRef.top)
             bottom.linkTo(notificationBtnRef.bottom)
-        }.padding(end = 7.dp)
+        }
+            .padding(end = 7.dp)
+            .clickable(onClick = { navController.navigate("expenditure") })
     )
 }
 

@@ -1,5 +1,7 @@
 package com.deepthought.gogi.androidApp.di
 
+import com.deepthought.expenditure.ExpenditureViewModel
+import com.deepthought.expendituredetail.ExpenditureDetailViewModel
 import com.deepthought.home.HomeViewModel
 import com.deepthought.inputname.InputNameViewModel
 import com.deepthought.notification.NotificationViewModel
@@ -16,4 +18,8 @@ val viewModelModule = module {
     viewModel { HomeViewModel(get()) }
 
     viewModel { NotificationViewModel() }
+
+    viewModel { ExpenditureViewModel()}
+
+    viewModel { ExpenditureDetailViewModel() }
 }

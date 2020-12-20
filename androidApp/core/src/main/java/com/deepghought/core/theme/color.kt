@@ -11,6 +11,7 @@ val colorGray100 = Color(0xFFF5F5F5)
 val colorGray200 = Color(0xFFEEEEEE)
 val colorGray500 = Color(0xFF9E9E9E)
 val colorGray600 = Color(0xFF757575)
+val colorGray800 = Color(0xFF424242)
 
 val colorBlueGray400 = Color(0xFF78909C)
 
@@ -22,18 +23,22 @@ val LightColors = lightColors(
 
 )
 
-fun Colors.white() =
-    if (isLight) Color.White
+val Colors.white: Color
+    get() = if (isLight) Color.White
     else Color.Black
 
-fun Colors.black() =
-    if (isLight) Color.Black
+val Colors.black: Color
+    get() = if (isLight) Color.Black
     else Color.White
 
-fun Colors.topAppBar() =
-    if (isLight) Color.White
+val Colors.topAppBar: Color
+    get() = if (isLight) Color.White
     else Color(0xFF202020)
 
-fun Colors.expenditureSection() =
-    if (isLight) colorGray100
+val Colors.expenditureSection: Color
+    get() = if (isLight) colorGray100
     else colorBlack100
+
+
+val Colors.secondaryUnselected: Color
+    get() = Color(0xFF02877A)

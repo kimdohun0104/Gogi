@@ -8,6 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.deepthought.bridge.model.Expenditure
+import com.deepthought.bridge.model.ExpenditureCategory
 import com.deepthought.home.component.ExpenditureSection
 import com.deepthought.home.component.HomeHeader
 
@@ -22,10 +23,10 @@ fun HomePage(
             title = "오늘 납부 예정",
             totalPrice = 100000,
             expenditures = listOf(
-                Expenditure(10, "1번타자", 1000),
-                Expenditure(10, "1번타자", 1000),
-                Expenditure(20, "1번타자", 1000),
-                Expenditure(30, "1번타자", 1000)
+                Expenditure(10, "1번타자", 1000, ExpenditureCategory(0, "a")),
+                Expenditure(10, "1번타자", 1000, ExpenditureCategory(0, "a")),
+                Expenditure(10, "1번타자", 1000, ExpenditureCategory(0, "a")),
+                Expenditure(10, "1번타자", 1000, ExpenditureCategory(0, "a")),
             )
         )
 
@@ -35,10 +36,10 @@ fun HomePage(
             title = "예정된 지출",
             totalPrice = 100000,
             expenditures = listOf(
-                Expenditure(10, "1번타자", 1000),
-                Expenditure(10, "1번타자", 1000),
-                Expenditure(20, "1번타자", 1000),
-                Expenditure(30, "1번타자", 1000)
+                Expenditure(10, "1번타자", 1000, ExpenditureCategory(0, "a")),
+                Expenditure(10, "1번타자", 1000, ExpenditureCategory(0, "a")),
+                Expenditure(10, "1번타자", 1000, ExpenditureCategory(0, "a")),
+                Expenditure(10, "1번타자", 1000, ExpenditureCategory(0, "a")),
             )
         )
 

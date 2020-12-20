@@ -1,6 +1,7 @@
 package com.deepthought.notification.component
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Icon
@@ -17,13 +18,26 @@ import com.deepghought.core.theme.colorBlueGray400
 import com.deepghought.core.theme.colorGray500
 import com.deepthought.bridge.model.Notification
 import com.deepthought.bridge.model.enum.NotificationType
+import com.deepthought.notification.NotificationEvent
+import com.deepthought.notification.NotificationViewModel
 import com.deepthought.notification.R
 
 @Composable
-fun NotificationListItem(notification: Notification) {
+fun NotificationListItem(
+    viewModel: NotificationViewModel,
+    notification: Notification
+) {
     ConstraintLayout(
         modifier = Modifier.padding(horizontal = 24.dp, vertical = 18.dp)
             .fillMaxWidth()
+            .clickable(onClick = {
+                viewModel.intent(
+                    NotificationEvent.OnClickNotificationItem(
+                        notification.destination,
+                        notification.parameters
+                    )
+                )
+            })
     ) {
         val (iconBackgroundRef, iconRef, titleRef, dateRef, detailRef) = createRefs()
 

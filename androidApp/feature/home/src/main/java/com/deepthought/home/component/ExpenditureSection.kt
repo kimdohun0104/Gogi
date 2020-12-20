@@ -36,7 +36,7 @@ fun ExpenditureSection(
         )
 
         Card(
-            backgroundColor = MaterialTheme.colors.expenditureSection(),
+            backgroundColor = MaterialTheme.colors.expenditureSection,
             shape = RoundedCornerShape(4.dp),
             modifier = Modifier.padding(horizontal = 32.dp).padding(top = 8.dp)
         ) {

@@ -4,5 +4,6 @@ data class Expenditure(
 
     val paymentDate: Int,
     val name: String,
-    val price: Int
+    val price: Int,
+    val expenditureCategory: ExpenditureCategory
 )

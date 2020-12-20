@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.ui.platform.setContent
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.navArgument
 import androidx.navigation.compose.rememberNavController
 import com.deepghought.core.theme.GogiTheme
+import com.deepthought.expenditure.ExpenditurePage
+import com.deepthought.expendituredetail.ExpenditureDetailPage
 import com.deepthought.home.HomePage
 import com.deepthought.inputname.InputNamePage
 import com.deepthought.notification.NotificationPage
@@ -38,6 +41,21 @@ class MainActivity : AppCompatActivity() {
 
                     composable("notification") {
                         NotificationPage(viewModel = getViewModel(), navController = navController)
+                    }
+
+                    composable("expenditure") {
+                        ExpenditurePage(viewModel = getViewModel(), navController = navController)
+                    }
+
+                    composable(
+                        "expenditureDetail?id={id}",
+                        arguments = listOf(navArgument("id") { defaultValue = 0 })
+                    ) { backStackEntry ->
+                        ExpenditureDetailPage(
+                            viewModel = getViewModel(),
+                            navController = navController,
+                            expenditureId = backStackEntry.arguments?.getInt("id") ?: 0
+                        )
                     }
                 }
             }

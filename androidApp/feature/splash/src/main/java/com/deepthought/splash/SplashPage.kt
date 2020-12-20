@@ -36,7 +36,7 @@ fun SplashPage(
         Text(
             text = "Gogi",
             style = MaterialTheme.typography.h1
-                .copy(color = MaterialTheme.colors.black())
+                .copy(color = MaterialTheme.colors.black)
         )
     }
 }

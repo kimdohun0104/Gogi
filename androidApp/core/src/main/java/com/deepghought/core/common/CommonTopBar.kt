@@ -26,7 +26,7 @@ fun CommonTopBar(
     isActionEnabled: Boolean = true,
 ) {
     TopAppBar(
-        backgroundColor = MaterialTheme.colors.topAppBar(),
+        backgroundColor = MaterialTheme.colors.topAppBar,
         title = { CommonTopAppBarTitleText(title) },
         actions = {
             if (action != null) {
@@ -64,7 +64,7 @@ private fun EnabledActionButton(action: String, onClickAction: () -> Unit) {
         text = action,
         style = MaterialTheme.typography
             .caption
-            .copy(color = MaterialTheme.colors.black()),
+            .copy(color = MaterialTheme.colors.black),
         modifier = Modifier.clickable(onClick = { onClickAction() })
     )
 }

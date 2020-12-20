@@ -13,6 +13,8 @@
             <option value="$PROJECT_DIR$/androidApp" />
             <option value="$PROJECT_DIR$/androidApp/core" />
             <option value="$PROJECT_DIR$/androidApp/feature" />
+            <option value="$PROJECT_DIR$/androidApp/feature/expenditure" />
+            <option value="$PROJECT_DIR$/androidApp/feature/expenditureDetail" />
             <option value="$PROJECT_DIR$/androidApp/feature/home" />
             <option value="$PROJECT_DIR$/androidApp/feature/inputName" />
             <option value="$PROJECT_DIR$/androidApp/feature/notification" />
