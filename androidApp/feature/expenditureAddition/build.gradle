@@ -8,8 +8,5 @@ apply from: rootProject.file('gradle/android.gradle')
 dependencies {
     implementation project(':androidApp:core')
 
-    testImplementation dependencies.Dependency.Test.junit
-    testImplementation dependencies.Dependency.Test.mockito
-    testImplementation dependencies.Dependency.Test.mockitoInline
-    testImplementation dependencies.Dependency.Test.kinda
+    testImplementation project(path: ':androidApp:core', configuration: 'testDependencies')
 }

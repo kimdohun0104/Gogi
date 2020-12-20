@@ -7,6 +7,10 @@ plugins {
 
 apply from: rootProject.file('gradle/android.gradle')
 
+configurations {
+    testDependencies.extendsFrom testImplementation
+}
+
 dependencies {
     api project(':bridge')
 
@@ -23,4 +27,9 @@ dependencies {
     api Dependency.AndroidX.Compose.liveData
 
     api Dependency.AndroidX.Navigation.compose
+
+    testImplementation Dependency.Test.junit
+    testImplementation Dependency.Test.mockito
+    testImplementation Dependency.Test.mockitoInline
+    testImplementation Dependency.Test.kinda
 }
