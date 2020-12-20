@@ -4,6 +4,8 @@ import com.deepthought.bridge.model.Notification
 import com.deepthought.bridge.model.enum.NotificationType
 import dohun.kim.kinda.kinda_android.KindaViewModel
 import dohun.kim.kinda.kinda_core.Event
+import dohun.kim.kinda.kinda_core.KindaReducer
+import dohun.kim.kinda.kinda_core.KindaSideEffectHandler
 import dohun.kim.kinda.kinda_dsl.buildReducer
 import dohun.kim.kinda.kinda_dsl.buildSideEffectHandler
 import java.text.DateFormat
@@ -13,7 +15,13 @@ import java.util.*
 class NotificationViewModel :
     KindaViewModel<NotificationState, NotificationEvent, NotificationSideEffect>(
         initialState = NotificationState(),
-        reducer = buildReducer {
+    ) {
+    init {
+        intent(NotificationEvent.AttemptGetNotifications)
+    }
+
+    override val reducer: KindaReducer<NotificationState, NotificationEvent, NotificationSideEffect>
+        get() = buildReducer {
             whenEvent<NotificationEvent.AttemptGetNotifications> {
                 dispatch(NotificationSideEffect.GetNotifications)
             }
@@ -27,8 +35,10 @@ class NotificationViewModel :
                 val route = "${it.destination}?$query"
                 next(copy(navigate = Event(route)))
             }
-        },
-        sideEffectHandler = buildSideEffectHandler {
+        }
+
+    override val sideEffectHandler: KindaSideEffectHandler<NotificationState, NotificationEvent, NotificationSideEffect>
+        get() = buildSideEffectHandler {
             whenSideEffect<NotificationSideEffect.GetNotifications> {
                 NotificationEvent.SetNotifications(
                     listOf(
@@ -66,8 +76,4 @@ class NotificationViewModel :
                 )
             }
         }
-    ) {
-    init {
-        intent(NotificationEvent.AttemptGetNotifications)
-    }
 }
