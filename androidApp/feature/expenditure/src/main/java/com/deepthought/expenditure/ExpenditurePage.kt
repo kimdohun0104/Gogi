@@ -30,7 +30,7 @@ fun ExpenditurePage(
                 onClickNavigation = { navController.popBackStack() },
                 action = "추가",
                 onClickAction = {
-                    navController.navigate("addExpenditure")
+                    navController.navigate("expenditureAddition")
                 }
             )
         }

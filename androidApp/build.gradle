@@ -76,6 +76,7 @@ dependencies {
     implementation project(':androidApp:feature:notification')
     implementation project(':androidApp:feature:expenditure')
     implementation project(':androidApp:feature:expenditureDetail')
+    implementation project(':androidApp:feature:expenditureAddition')
 
 
     implementation Dependency.timber
