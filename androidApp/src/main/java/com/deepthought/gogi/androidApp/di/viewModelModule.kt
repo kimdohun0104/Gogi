@@ -2,6 +2,7 @@ package com.deepthought.gogi.androidApp.di
 
 import com.deepthought.expenditure.ExpenditureViewModel
 import com.deepthought.expenditureaddition.ExpenditureAdditionViewModel
+import com.deepthought.expenditurecategoryselection.ExpenditureCategorySelectionViewModel
 import com.deepthought.expendituredetail.ExpenditureDetailViewModel
 import com.deepthought.home.HomeViewModel
 import com.deepthought.inputname.InputNameViewModel
@@ -25,4 +26,6 @@ val viewModelModule = module {
     viewModel { ExpenditureDetailViewModel() }
 
     viewModel { ExpenditureAdditionViewModel() }
+
+    viewModel { ExpenditureCategorySelectionViewModel() }
 }

@@ -1,5 +1,6 @@
 package com.deepthought.expenditureaddition
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
@@ -9,8 +10,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.compose.navigate
 import com.deepghought.core.common.CommonTopBar
-import com.deepghought.core.ext.state
 import com.deepghought.core.theme.captionRegular
 import com.deepghought.core.theme.colorGray500
 import com.deepghought.core.theme.paragraph
@@ -29,14 +30,16 @@ fun ExpenditureAdditionPage(
         Column(
             modifier = Modifier.padding(vertical = 24.dp, horizontal = 32.dp)
         ) {
+
             ExpenditureAdditionNameTextField()
             Box(modifier = Modifier.height(24.dp))
             ExpenditureAdditionPriceTextField()
             Box(modifier = Modifier.height(24.dp))
             ExpenditureAdditionSelectPaymentDay()
             Box(modifier = Modifier.height(24.dp))
-            ExpenditureAdditionSelectCategory()
+            ExpenditureAdditionSelectCategory(navController)
         }
+
     }
 }
 
@@ -101,7 +104,9 @@ private fun ExpenditureAdditionSelectPaymentDay() {
 }
 
 @Composable
-private fun ExpenditureAdditionSelectCategory() {
+private fun ExpenditureAdditionSelectCategory(
+    navController: NavController
+) {
     Text(
         "분류",
         style = MaterialTheme.typography.captionRegular
@@ -116,7 +121,10 @@ private fun ExpenditureAdditionSelectCategory() {
         Text(
             text = "선택",
             style = MaterialTheme.typography.paragraph
-                .copy(color = MaterialTheme.colors.primary)
+                .copy(color = MaterialTheme.colors.primary),
+            modifier = Modifier.clickable(onClick = {
+                navController.navigate("expenditureCategorySelection")
+            })
         )
     }
 }

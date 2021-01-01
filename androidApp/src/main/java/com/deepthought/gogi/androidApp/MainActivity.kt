@@ -10,6 +10,7 @@ import androidx.navigation.compose.rememberNavController
 import com.deepghought.core.theme.GogiTheme
 import com.deepthought.expenditure.ExpenditurePage
 import com.deepthought.expenditureaddition.ExpenditureAdditionPage
+import com.deepthought.expenditurecategoryselection.ExpenditureCategorySelectionPage
 import com.deepthought.expendituredetail.ExpenditureDetailPage
 import com.deepthought.home.HomePage
 import com.deepthought.inputname.InputNamePage
@@ -61,6 +62,13 @@ class MainActivity : AppCompatActivity() {
 
                     composable("expenditureAddition") {
                         ExpenditureAdditionPage(
+                            viewModel = getViewModel(),
+                            navController = navController
+                        )
+                    }
+
+                    composable("expenditureCategorySelection") {
+                        ExpenditureCategorySelectionPage(
                             viewModel = getViewModel(),
                             navController = navController
                         )
