@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/androidApp/feature" />
             <option value="$PROJECT_DIR$/androidApp/feature/expenditure" />
             <option value="$PROJECT_DIR$/androidApp/feature/expenditureAddition" />
+            <option value="$PROJECT_DIR$/androidApp/feature/expenditureCategoryAddition" />
             <option value="$PROJECT_DIR$/androidApp/feature/expenditureCategorySelection" />
             <option value="$PROJECT_DIR$/androidApp/feature/expenditureDetail" />
             <option value="$PROJECT_DIR$/androidApp/feature/home" />

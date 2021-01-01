@@ -6,6 +6,7 @@ import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.TransitionState
 import androidx.compose.animation.transition
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumnFor
 import androidx.compose.material.*
@@ -18,6 +19,7 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.compose.navigate
 import com.deepghought.core.common.CommonTopBar
 import com.deepghought.core.theme.divider
 import com.deepthought.bridge.model.ExpenditureCategory
@@ -55,7 +57,7 @@ fun ExpenditureCategorySelectionPage(
                 )
             }
 
-            ExpenditureCategoryAddItem()
+            ExpenditureCategoryAddItem(navController)
             Divider(thickness = 1.dp, color = MaterialTheme.colors.divider)
         }
     }
@@ -95,10 +97,13 @@ private fun ExpenditureCategorySelectionItem(
 }
 
 @Composable
-private fun ExpenditureCategoryAddItem() {
+private fun ExpenditureCategoryAddItem(
+    navController: NavController
+) {
     Row(
         modifier = Modifier.fillMaxWidth()
-            .padding(vertical = 12.dp, horizontal = 18.dp),
+            .padding(vertical = 12.dp, horizontal = 18.dp)
+            .clickable(onClick = { navController.navigate("expenditureCategoryAddition") }),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Icon(

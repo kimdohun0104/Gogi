@@ -78,6 +78,7 @@ dependencies {
     implementation project(':androidApp:feature:expenditureDetail')
     implementation project(':androidApp:feature:expenditureAddition')
     implementation project(':androidApp:feature:expenditureCategorySelection')
+    implementation project(':androidApp:feature:expenditureCategoryAddition')
 
 
     implementation Dependency.timber
