@@ -1,8 +1,6 @@
 package com.deepthought.home.component
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumnFor
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
@@ -10,12 +8,11 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.deepghought.core.ext.toDefaultPriceFormat
-import com.deepghought.core.theme.expenditureSection
+import com.deepthought.core.ext.toDefaultPriceFormat
+import com.deepthought.core.theme.expenditureSection
 import com.deepthought.bridge.model.Expenditure
-import com.deepghought.core.theme.paragraph
-import com.deepghought.core.theme.paragraphRegular
-import kotlin.coroutines.CoroutineContext
+import com.deepthought.core.theme.paragraph
+import com.deepthought.core.theme.paragraphRegular
 
 @Composable
 fun ExpenditureSection(

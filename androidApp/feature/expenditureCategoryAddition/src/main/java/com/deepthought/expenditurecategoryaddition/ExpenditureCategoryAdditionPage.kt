@@ -11,8 +11,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.deepghought.core.common.CommonTopBar
-import com.deepghought.core.theme.paragraphRegular
+import com.deepthought.core.common.CommonTopBar
+import com.deepthought.core.theme.paragraphRegular
 
 @Composable
 fun ExpenditureCategoryAdditionPage(

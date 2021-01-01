@@ -7,10 +7,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.navigate
-import com.deepghought.core.common.CommonTopBar
-import com.deepghought.core.theme.colorGray500
-import com.deepghought.core.theme.colorGray600
-import com.deepghought.core.theme.colorGray800
+import com.deepthought.core.common.CommonTopBar
+import com.deepthought.core.theme.colorGray500
 import com.deepthought.bridge.model.Expenditure
 import com.deepthought.bridge.model.ExpenditureCategory
 import com.deepthought.expenditure.components.ExpenditureCategoryChipRow

@@ -21,7 +21,6 @@ include(":androidApp:feature:splash")
 
 include(":bridge")
 
-include(":data:local")
 include(":data:preference")
 include(":androidApp:core")
 include(":androidApp:feature:inputName")
@@ -32,3 +31,4 @@ include(":androidApp:feature:expenditureDetail")
 include(":androidApp:feature:expenditureAddition")
 include(":androidApp:feature:expenditureCategorySelection")
 include(":androidApp:feature:expenditureCategoryAddition")
+include(":data:local")

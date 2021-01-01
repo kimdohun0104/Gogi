@@ -1,4 +1,4 @@
-package com.deepghought.core.theme
+package com.deepthought.core.theme
 
 import androidx.compose.material.*
 import androidx.compose.ui.graphics.Color

@@ -12,8 +12,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
-import com.deepghought.core.theme.paragraph
-import com.deepghought.core.theme.secondaryUnselected
+import com.deepthought.core.theme.paragraph
+import com.deepthought.core.theme.secondaryUnselected
 import com.deepthought.expenditure.item.ExpenditureCategoryItem
 
 @Composable

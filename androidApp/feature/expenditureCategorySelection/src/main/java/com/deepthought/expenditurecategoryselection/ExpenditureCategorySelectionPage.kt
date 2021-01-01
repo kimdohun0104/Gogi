@@ -1,8 +1,5 @@
 package com.deepthought.expenditurecategoryselection
 
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.EnterTransition
-import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.TransitionState
 import androidx.compose.animation.transition
 import androidx.compose.foundation.Image
@@ -10,18 +7,16 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumnFor
 import androidx.compose.material.*
-import androidx.compose.material.ripple.RippleOpacity
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawOpacity
 import androidx.compose.ui.res.vectorResource
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.navigate
-import com.deepghought.core.common.CommonTopBar
-import com.deepghought.core.theme.divider
+import com.deepthought.core.common.CommonTopBar
+import com.deepthought.core.theme.divider
 import com.deepthought.bridge.model.ExpenditureCategory
 import com.deepthought.expenditurecategoryselection.animation.*
 

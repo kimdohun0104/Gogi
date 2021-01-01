@@ -1,4 +1,4 @@
-package com.deepghought.core.ext
+package com.deepthought.core.ext
 
 import java.text.SimpleDateFormat
 import java.util.*

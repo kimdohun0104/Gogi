@@ -7,7 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navArgument
 import androidx.navigation.compose.rememberNavController
-import com.deepghought.core.theme.GogiTheme
+import com.deepthought.core.theme.GogiTheme
 import com.deepthought.expenditure.ExpenditurePage
 import com.deepthought.expenditureaddition.ExpenditureAdditionPage
 import com.deepthought.expenditurecategoryaddition.ExpenditureCategoryAdditionPage

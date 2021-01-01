@@ -12,10 +12,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
-import com.deepghought.core.ext.toDefaultDateFormat
-import com.deepghought.core.theme.captionRegular
-import com.deepghought.core.theme.colorBlueGray400
-import com.deepghought.core.theme.colorGray500
+import com.deepthought.core.ext.toDefaultDateFormat
+import com.deepthought.core.theme.captionRegular
+import com.deepthought.core.theme.colorBlueGray400
+import com.deepthought.core.theme.colorGray500
 import com.deepthought.bridge.model.Notification
 import com.deepthought.bridge.model.enum.NotificationType
 import com.deepthought.notification.NotificationEvent

@@ -8,10 +8,10 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.deepghought.core.ext.toDefaultPriceFormat
-import com.deepghought.core.theme.colorGray500
-import com.deepghought.core.theme.paragraph
-import com.deepghought.core.theme.paragraphRegular
+import com.deepthought.core.ext.toDefaultPriceFormat
+import com.deepthought.core.theme.colorGray500
+import com.deepthought.core.theme.paragraph
+import com.deepthought.core.theme.paragraphRegular
 import com.deepthought.bridge.model.Expenditure
 
 @Composable

@@ -15,8 +15,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import androidx.navigation.NavController
 import androidx.navigation.compose.navigate
-import com.deepghought.core.ext.state
-import com.deepghought.core.ext.toDefaultPriceFormat
+import com.deepthought.core.ext.state
+import com.deepthought.core.ext.toDefaultPriceFormat
 import com.deepthought.home.HomeState
 import com.deepthought.home.HomeViewModel
 import com.deepthought.home.R

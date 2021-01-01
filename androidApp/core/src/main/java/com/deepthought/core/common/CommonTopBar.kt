@@ -1,20 +1,16 @@
-package com.deepghought.core.common
+package com.deepthought.core.common
 
-import androidx.compose.foundation.ClickableText
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.vectorResource
-import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.unit.dp
-import androidx.ui.tooling.preview.Preview
-import com.deepghought.core.R
-import com.deepghought.core.theme.black
-import com.deepghought.core.theme.colorGray600
-import com.deepghought.core.theme.paragraph
-import com.deepghought.core.theme.topAppBar
+import com.deepthought.core.theme.black
+import com.deepthought.core.theme.colorGray600
+import com.deepthought.core.theme.paragraph
+import com.deepthought.core.theme.topAppBar
 
 @Composable
 fun CommonTopBar(

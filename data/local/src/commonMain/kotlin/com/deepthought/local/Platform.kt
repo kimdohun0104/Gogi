@@ -1,4 +1,4 @@
-package com.deepthought.gogi.local
+package com.deepthought.local
 
 expect class Platform() {
     val platform: String

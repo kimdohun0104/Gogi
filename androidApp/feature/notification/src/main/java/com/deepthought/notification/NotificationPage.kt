@@ -7,10 +7,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.navigate
-import com.deepghought.core.common.CommonTopBar
-import com.deepghought.core.ext.event
-import com.deepghought.core.ext.state
-import com.deepghought.core.theme.colorGray200
+import com.deepthought.core.common.CommonTopBar
+import com.deepthought.core.ext.event
+import com.deepthought.core.ext.state
+import com.deepthought.core.theme.colorGray200
 import com.deepthought.notification.component.NotificationListItem
 
 @Composable

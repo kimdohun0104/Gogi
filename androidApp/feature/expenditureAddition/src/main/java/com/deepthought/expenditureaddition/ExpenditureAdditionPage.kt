@@ -11,11 +11,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.navigate
-import com.deepghought.core.common.CommonTopBar
-import com.deepghought.core.theme.captionRegular
-import com.deepghought.core.theme.colorGray500
-import com.deepghought.core.theme.paragraph
-import com.deepghought.core.theme.paragraphRegular
+import com.deepthought.core.common.CommonTopBar
+import com.deepthought.core.theme.captionRegular
+import com.deepthought.core.theme.colorGray500
+import com.deepthought.core.theme.paragraph
+import com.deepthought.core.theme.paragraphRegular
 
 @Composable
 fun ExpenditureAdditionPage(
