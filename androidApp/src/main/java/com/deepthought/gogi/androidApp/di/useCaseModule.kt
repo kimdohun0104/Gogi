@@ -10,7 +10,7 @@ val useCaseModule = module {
 
     factory { GetPaidExpendituresUseCase(get()) }
 
-    factory { GetScheduledExpenditureUseCase(get()) }
+    factory { GetScheduledExpendituresUseCase(get()) }
 
     factory { GetTodayExpendituresUseCase(get()) }
 }

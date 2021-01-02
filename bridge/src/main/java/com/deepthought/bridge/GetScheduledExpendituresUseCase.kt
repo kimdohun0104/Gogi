@@ -5,7 +5,7 @@ import com.deepthought.bridge.model.mapper.toExpenditure
 import com.deepthought.repository.ExpenditureRepository
 import java.util.*
 
-class GetScheduledExpenditureUseCase(
+class GetScheduledExpendituresUseCase(
     private val expenditureRepository: ExpenditureRepository
 ) {
 
@@ -15,5 +15,6 @@ class GetScheduledExpenditureUseCase(
 
         return expenditures.filter { it.paymentDate > todayDate }
             .map { it.toExpenditure() }
+            .sortedBy { it.paymentDate }
     }
 }

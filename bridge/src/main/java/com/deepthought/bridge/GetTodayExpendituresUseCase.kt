@@ -15,5 +15,6 @@ class GetTodayExpendituresUseCase(
 
         return expenditures.filter { it.paymentDate == todayDate }
             .map { it.toExpenditure() }
+            .sortedBy { it.paymentDate }
     }
 }

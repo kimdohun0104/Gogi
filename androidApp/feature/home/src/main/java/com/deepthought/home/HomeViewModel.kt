@@ -13,7 +13,7 @@ import kotlinx.coroutines.*
 class HomeViewModel(
     private val getUserName: GetUserNameUseCase,
     private val getPaidExpenditures: GetPaidExpendituresUseCase,
-    private val getScheduledExpenditures: GetScheduledExpenditureUseCase,
+    private val getScheduledExpenditures: GetScheduledExpendituresUseCase,
     private val getTodayExpenditures: GetTodayExpendituresUseCase
 ) : KindaViewModel<HomeState, HomeEvent, HomeSideEffect>(
     initialState = HomeState()
