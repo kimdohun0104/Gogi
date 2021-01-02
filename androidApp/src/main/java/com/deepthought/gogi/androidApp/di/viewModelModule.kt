@@ -18,11 +18,11 @@ val viewModelModule = module {
 
     viewModel { SplashViewModel(get()) }
 
-    viewModel { HomeViewModel(get()) }
+    viewModel { HomeViewModel(get(), get(), get(), get()) }
 
     viewModel { NotificationViewModel() }
 
-    viewModel { ExpenditureViewModel()}
+    viewModel { ExpenditureViewModel() }
 
     viewModel { ExpenditureDetailViewModel() }
 
