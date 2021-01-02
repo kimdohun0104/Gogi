@@ -37,7 +37,7 @@ android {
         unitTests.all {
             testLogging {
                 events "passed", "skipped", "failed", "standardOut", "standardError"
-                outputs.upToDateWhen {false}
+                outputs.upToDateWhen { false }
                 showStandardStreams = true
             }
         }
@@ -68,7 +68,9 @@ dependencies {
 
     implementation project(':bridge')
 
+    implementation project(':data:local')
     implementation project(':data:preference')
+    implementation project(':data:repository')
 
     implementation project(':androidApp:feature:splash')
     implementation project(':androidApp:feature:inputName')
@@ -92,6 +94,8 @@ dependencies {
 
     implementation Dependency.AndroidX.startup
     implementation Dependency.AndroidX.appCompat
+
+    implementation Dependency.AndroidX.Room.runtime
 
     implementation Dependency.AndroidX.Compose.ui
     implementation Dependency.AndroidX.Compose.tooling

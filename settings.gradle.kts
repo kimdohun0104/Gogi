@@ -17,11 +17,14 @@ rootProject.name = "Gogi"
 
 
 include(":androidApp")
-include(":androidApp:feature:splash")
 
 include(":bridge")
 
 include(":data:preference")
+include(":data:local")
+include(":data:repository")
+
+include(":androidApp:feature:splash")
 include(":androidApp:core")
 include(":androidApp:feature:inputName")
 include(":androidApp:feature:home")
@@ -31,4 +34,4 @@ include(":androidApp:feature:expenditureDetail")
 include(":androidApp:feature:expenditureAddition")
 include(":androidApp:feature:expenditureCategorySelection")
 include(":androidApp:feature:expenditureCategoryAddition")
-include(":data:local")
+

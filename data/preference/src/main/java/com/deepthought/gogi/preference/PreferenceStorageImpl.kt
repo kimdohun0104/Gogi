@@ -2,7 +2,6 @@ package com.deepthought.gogi.preference
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.deepthought.gogi.preference.contract.PreferenceStorage
 
 class PreferenceStorageImpl(
     private val context: Context

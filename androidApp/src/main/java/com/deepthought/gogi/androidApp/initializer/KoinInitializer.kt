@@ -2,9 +2,7 @@ package com.deepthought.gogi.androidApp.initializer
 
 import android.content.Context
 import androidx.startup.Initializer
-import com.deepthought.gogi.androidApp.di.preferenceModule
-import com.deepthought.gogi.androidApp.di.useCaseModule
-import com.deepthought.gogi.androidApp.di.viewModelModule
+import com.deepthought.gogi.androidApp.di.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -15,7 +13,9 @@ class KoinInitializer : Initializer<Unit> {
             modules(
                 viewModelModule,
                 preferenceModule,
-                useCaseModule
+                useCaseModule,
+                repositoryModule,
+                localModule
             )
         }
     }

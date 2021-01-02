@@ -1,7 +1,7 @@
 package com.deepthought.bridge
 
-import com.deepthought.gogi.preference.contract.PREF_USER_NAME
-import com.deepthought.gogi.preference.contract.PreferenceStorage
+import com.deepthought.gogi.preference.PREF_USER_NAME
+import com.deepthought.gogi.preference.PreferenceStorage
 
 class SetUserNameUseCase(
     private val preferenceStorage: PreferenceStorage

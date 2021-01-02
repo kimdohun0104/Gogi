@@ -1,6 +1,4 @@
-package com.deepthought.gogi.preference.contract
-
-const val PREF_USER_NAME = "PREF_USER_NAME"
+package com.deepthought.gogi.preference
 
 interface PreferenceStorage {
 
