@@ -28,6 +28,14 @@ object Dependency {
         object Navigation {
             const val compose = "androidx.navigation:navigation-compose:1.0.0-alpha02"
         }
+
+        object Room {
+            const val version = "2.2.6"
+
+            const val runtime = "androidx.room:room-runtime:$version"
+            const val compiler = "androidx.room:room-compiler:$version"
+            const val ktx = "androidx.room:room-ktx:$version"
+        }
     }
 
     object Kinda {

@@ -1,5 +1,7 @@
 package com.deepthought.gogi.preference.contract
 
+const val PREF_USER_NAME = "PREF_USER_NAME"
+
 interface PreferenceStorage {
 
     fun getInt(key: String): Int?
