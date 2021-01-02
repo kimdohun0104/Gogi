@@ -10,4 +10,6 @@ interface ExpenditureDao {
     @Query("SELECT * FROM Expenditure")
     suspend fun getAllExpenditures(): List<ExpenditureEntity>
 
+    @Query("SELECT SUM(price) FROM Expenditure")
+    suspend fun getTotalPriceOfExpenditures(): Int
 }

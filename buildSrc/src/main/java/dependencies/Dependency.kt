@@ -6,8 +6,9 @@ object Dependency {
     const val material = "com.google.android.material:material:1.2.1"
 
     object Kotlin {
+        const val version = "1.4.10"
 
-        const val version = "1.4.21"
+        const val serializationJson = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1"
     }
 
     object AndroidX {

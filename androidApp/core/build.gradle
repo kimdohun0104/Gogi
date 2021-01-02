@@ -5,7 +5,7 @@ plugins {
     id 'kotlin-android'
 }
 
-apply from: rootProject.file('gradle/android.gradle')
+apply from: rootProject.file('gradle/feature.gradle')
 
 configurations {
     testDependencies.extendsFrom testImplementation
