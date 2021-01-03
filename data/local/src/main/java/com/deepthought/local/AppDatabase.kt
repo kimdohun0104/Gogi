@@ -4,6 +4,7 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverter
 import androidx.room.TypeConverters
+import com.deepthought.local.dao.ExpenditureCategoryDao
 import com.deepthought.local.dao.ExpenditureDao
 import com.deepthought.local.entity.ExpenditureCategoryEntity
 import com.deepthought.local.entity.ExpenditureEntity
@@ -23,6 +24,8 @@ import kotlinx.serialization.json.Json
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun expenditureDao(): ExpenditureDao
+
+    abstract fun expenditureCategoryDao(): ExpenditureCategoryDao
 }
 
 

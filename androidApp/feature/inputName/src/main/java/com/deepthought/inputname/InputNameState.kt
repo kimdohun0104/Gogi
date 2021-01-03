@@ -17,7 +17,10 @@ sealed class InputNameEvent : KindaEvent {
     data class OnEnterName(val name: String) : InputNameEvent()
 
     object OnClickInputNameComplete : InputNameEvent()
+
+    object OnInsertDefaultExpenditureCategoriesSucceed : InputNameEvent()
 }
 
 sealed class InputNameSideEffect : KindaSideEffect {
+    object InsertDefaultExpenditureCategories : InputNameSideEffect()
 }

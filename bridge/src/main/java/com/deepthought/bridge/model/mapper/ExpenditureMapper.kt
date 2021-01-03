@@ -12,9 +12,3 @@ fun ExpenditureEntity.toExpenditure() =
         price = price,
         expenditureCategory = expenditureCategory.toExpenditureCategory()
     )
-
-private fun ExpenditureCategoryEntity.toExpenditureCategory() =
-    ExpenditureCategory(
-        id = id,
-        name = name
-    )

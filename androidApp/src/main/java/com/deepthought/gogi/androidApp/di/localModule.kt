@@ -11,4 +11,6 @@ val localModule = module {
     }
 
     single { get<AppDatabase>().expenditureDao() }
+
+    single { get<AppDatabase>().expenditureCategoryDao() }
 }

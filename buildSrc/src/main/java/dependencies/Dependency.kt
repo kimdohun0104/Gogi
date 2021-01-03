@@ -9,6 +9,7 @@ object Dependency {
         const val version = "1.4.10"
 
         const val serializationJson = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1"
+        const val coroutine = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2"
     }
 
     object AndroidX {

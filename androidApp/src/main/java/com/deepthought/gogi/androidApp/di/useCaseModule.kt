@@ -13,4 +13,6 @@ val useCaseModule = module {
     factory { GetScheduledExpendituresUseCase(get()) }
 
     factory { GetTodayExpendituresUseCase(get()) }
+
+    factory { InsertDefaultExpenditureCategoriesUseCase(get()) }
 }
