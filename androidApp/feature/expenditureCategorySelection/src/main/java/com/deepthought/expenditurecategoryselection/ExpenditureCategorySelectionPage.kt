@@ -1,7 +1,9 @@
 package com.deepthought.expenditurecategoryselection
 
 import androidx.compose.animation.transition
+import androidx.compose.foundation.ScrollableColumn
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyColumnFor
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -11,6 +13,7 @@ import com.deepthought.core.ext.state
 import com.deepthought.expenditurecategoryselection.animation.*
 import com.deepthought.expenditurecategoryselection.component.ExpenditureCategoryAddItem
 import com.deepthought.expenditurecategoryselection.component.ExpenditureCategorySelectionItem
+import com.deepthought.expenditurecategoryselection.component.ExpenditureCategorySelectionList
 
 @Composable
 fun ExpenditureCategorySelectionPage(
@@ -25,11 +28,10 @@ fun ExpenditureCategorySelectionPage(
             )
         }
     ) {
-        Column {
-            ExpenditureCategorySelectionList(viewModel = viewModel)
-
-            ExpenditureCategoryAddItem(navController)
-        }
+        ExpenditureCategorySelectionList(
+            viewModel = viewModel,
+            navController = navController
+        )
     }
 }
 
@@ -52,29 +54,4 @@ private fun ExpenditureCategorySelectionTopBar(
             }
         }
     )
-}
-
-@Composable
-private fun ExpenditureCategorySelectionList(
-    viewModel: ExpenditureCategorySelectionViewModel,
-
-    ) {
-    val state = viewModel.state()
-
-    val transitionState = transition(
-        definition = expenditureCategoryDefinition,
-        initState = ExpenditureCategoryState.SELECTION,
-        toState =
-        if (state.isEdit) ExpenditureCategoryState.ADDITION
-        else ExpenditureCategoryState.SELECTION
-    )
-
-    LazyColumnFor(
-        items = state.expenditureCategories
-    ) {
-        ExpenditureCategorySelectionItem(
-            expenditureCategory = it,
-            transitionState = transitionState
-        )
-    }
 }

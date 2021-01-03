@@ -1,9 +1,11 @@
 package com.deepthought.expenditurecategoryselection.component
 
 import androidx.compose.animation.core.TransitionState
+import androidx.compose.animation.transition
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Divider
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
@@ -17,11 +19,40 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.navigate
 import com.deepthought.bridge.model.ExpenditureCategory
+import com.deepthought.core.ext.state
 import com.deepthought.core.theme.divider
+import com.deepthought.expenditurecategoryselection.ExpenditureCategorySelectionViewModel
 import com.deepthought.expenditurecategoryselection.R
-import com.deepthought.expenditurecategoryselection.animation.deleteButtonSize
-import com.deepthought.expenditurecategoryselection.animation.deleteButtonStartSize
-import com.deepthought.expenditurecategoryselection.animation.editButtonOpacity
+import com.deepthought.expenditurecategoryselection.animation.*
+
+@Composable
+fun ExpenditureCategorySelectionList(
+    viewModel: ExpenditureCategorySelectionViewModel,
+    navController: NavController
+) {
+    val state = viewModel.state()
+
+    val transitionState = transition(
+        definition = expenditureCategoryDefinition,
+        initState = ExpenditureCategoryState.SELECTION,
+        toState =
+        if (state.isEdit) ExpenditureCategoryState.ADDITION
+        else ExpenditureCategoryState.SELECTION
+    )
+
+    LazyColumn {
+        items(state.expenditureCategories) {
+            ExpenditureCategorySelectionItem(
+                expenditureCategory = it,
+                transitionState = transitionState
+            )
+        }
+
+        item {
+            ExpenditureCategoryAddItem(navController = navController)
+        }
+    }
+}
 
 @Composable
 fun ExpenditureCategorySelectionItem(
@@ -60,21 +91,24 @@ fun ExpenditureCategorySelectionItem(
 fun ExpenditureCategoryAddItem(
     navController: NavController
 ) {
-    Row(
+    Box(
         modifier = Modifier.fillMaxWidth()
-            .padding(vertical = 12.dp, horizontal = 18.dp)
-            .clickable(onClick = { navController.navigate("expenditureCategoryAddition") }),
-        verticalAlignment = Alignment.CenterVertically
+            .clickable(onClick = { navController.navigate("expenditureCategoryAddition") })
     ) {
-        Icon(
-            asset = vectorResource(id = R.drawable.ic_plus),
-            modifier = Modifier.size(12.dp)
-        )
-        Box(modifier = Modifier.width(12.dp))
-        Text(
-            text = "추가",
-            style = MaterialTheme.typography.caption,
-        )
+        Row(
+            modifier = Modifier.padding(vertical = 12.dp, horizontal = 18.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Icon(
+                asset = vectorResource(id = R.drawable.ic_plus),
+                modifier = Modifier.size(12.dp)
+            )
+            Box(modifier = Modifier.width(12.dp))
+            Text(
+                text = "추가",
+                style = MaterialTheme.typography.caption,
+            )
+        }
     }
     Divider(thickness = 1.dp, color = MaterialTheme.colors.divider)
 }

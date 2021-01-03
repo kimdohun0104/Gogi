@@ -25,5 +25,7 @@ val useCaseModule = module {
      */
     factory { InsertDefaultExpenditureCategoriesUseCase(get()) }
 
+    factory { InsertExpenditureCategoryUseCase(get()) }
+
     factory { GetExpenditureCategoriesUseCase(get()) }
 }

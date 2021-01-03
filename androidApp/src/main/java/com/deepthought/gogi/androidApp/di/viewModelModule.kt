@@ -30,5 +30,5 @@ val viewModelModule = module {
 
     viewModel { ExpenditureCategorySelectionViewModel(get()) }
 
-    viewModel { ExpenditureCategoryAdditionViewModel() }
+    viewModel { ExpenditureCategoryAdditionViewModel(get()) }
 }
