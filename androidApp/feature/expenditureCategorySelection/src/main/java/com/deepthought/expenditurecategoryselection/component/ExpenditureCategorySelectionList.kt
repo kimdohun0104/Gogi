@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.navigate
 import com.deepthought.bridge.model.ExpenditureCategory
+import com.deepthought.core.ext.setToSavedState
 import com.deepthought.core.ext.state
 import com.deepthought.core.theme.divider
 import com.deepthought.expenditurecategoryselection.ExpenditureCategorySelectionViewModel
@@ -44,7 +45,8 @@ fun ExpenditureCategorySelectionList(
         items(state.expenditureCategories) {
             ExpenditureCategorySelectionItem(
                 expenditureCategory = it,
-                transitionState = transitionState
+                transitionState = transitionState,
+                navController = navController
             )
         }
 
@@ -57,10 +59,15 @@ fun ExpenditureCategorySelectionList(
 @Composable
 fun ExpenditureCategorySelectionItem(
     expenditureCategory: ExpenditureCategory,
-    transitionState: TransitionState
+    transitionState: TransitionState,
+    navController: NavController
 ) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier.clickable(onClick = {
+            navController.setToSavedState("expenditureCategory", expenditureCategory)
+            navController.popBackStack()
+        })
     ) {
         Box(modifier = Modifier.width(transitionState[deleteButtonStartSize]))
 

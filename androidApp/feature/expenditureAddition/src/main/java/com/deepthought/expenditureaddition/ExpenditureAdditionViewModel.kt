@@ -12,7 +12,11 @@ class ExpenditureAdditionViewModel :
     ) {
 
     override val reducer: KindaReducer<ExpenditureAdditionState, ExpenditureAdditionEvent, ExpenditureAdditionSideEffect>
-        get() = buildReducer { }
+        get() = buildReducer {
+            whenEvent<ExpenditureAdditionEvent.OnSelectExpenditureCategory> {
+                next(copy(expenditureCategory = it.expenditureCategory))
+            }
+        }
 
     override val sideEffectHandler: KindaSideEffectHandler<ExpenditureAdditionState, ExpenditureAdditionEvent, ExpenditureAdditionSideEffect>
         get() = buildSideEffectHandler { }

@@ -11,7 +11,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.navigate
+import com.deepthought.bridge.model.ExpenditureCategory
 import com.deepthought.core.common.CommonTopBar
+import com.deepthought.core.ext.getFromSavedState
+import com.deepthought.core.ext.observeFromSavedState
+import com.deepthought.core.ext.state
 import com.deepthought.core.theme.captionRegular
 import com.deepthought.core.theme.colorGray500
 import com.deepthought.core.theme.paragraph
@@ -22,6 +26,12 @@ fun ExpenditureAdditionPage(
     viewModel: ExpenditureAdditionViewModel,
     navController: NavController
 ) {
+    navController.observeFromSavedState<ExpenditureCategory>(
+        key = "expenditureCategory",
+        callback = {
+            viewModel.intent(ExpenditureAdditionEvent.OnSelectExpenditureCategory(it))
+        })
+
     Scaffold(
         topBar = {
             ExpenditureAdditionTopBar(viewModel = viewModel, navController = navController)
@@ -37,7 +47,10 @@ fun ExpenditureAdditionPage(
             Box(modifier = Modifier.height(24.dp))
             ExpenditureAdditionSelectPaymentDay()
             Box(modifier = Modifier.height(24.dp))
-            ExpenditureAdditionSelectCategory(navController)
+            ExpenditureAdditionSelectCategory(
+                viewModel = viewModel,
+                navController = navController
+            )
         }
 
     }
@@ -105,8 +118,11 @@ private fun ExpenditureAdditionSelectPaymentDay() {
 
 @Composable
 private fun ExpenditureAdditionSelectCategory(
+    viewModel: ExpenditureAdditionViewModel,
     navController: NavController
 ) {
+    val state = viewModel.state()
+
     Text(
         "분류",
         style = MaterialTheme.typography.captionRegular
@@ -114,7 +130,7 @@ private fun ExpenditureAdditionSelectCategory(
     )
     Row {
         Text(
-            text = "문화/컨텐츠",
+            text = state.expenditureCategory?.name ?: "",
             style = MaterialTheme.typography.paragraphRegular,
             modifier = Modifier.weight(1f)
         )
