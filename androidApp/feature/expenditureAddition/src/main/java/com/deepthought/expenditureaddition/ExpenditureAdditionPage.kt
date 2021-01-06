@@ -9,6 +9,7 @@ import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.window.Dialog
 import androidx.navigation.NavController
 import androidx.navigation.compose.navigate
 import com.deepthought.bridge.model.ExpenditureCategory
@@ -45,14 +46,15 @@ fun ExpenditureAdditionPage(
             Box(modifier = Modifier.height(24.dp))
             ExpenditureAdditionPriceTextField()
             Box(modifier = Modifier.height(24.dp))
-            ExpenditureAdditionSelectPaymentDay()
+            ExpenditureAdditionSelectPaymentDay(
+                navController = navController
+            )
             Box(modifier = Modifier.height(24.dp))
             ExpenditureAdditionSelectCategory(
                 viewModel = viewModel,
                 navController = navController
             )
         }
-
     }
 }
 
@@ -96,7 +98,9 @@ private fun ExpenditureAdditionPriceTextField() {
 }
 
 @Composable
-private fun ExpenditureAdditionSelectPaymentDay() {
+private fun ExpenditureAdditionSelectPaymentDay(
+    navController: NavController
+) {
     Text(
         "지출일",
         style = MaterialTheme.typography.captionRegular
@@ -111,7 +115,10 @@ private fun ExpenditureAdditionSelectPaymentDay() {
         Text(
             text = "선택",
             style = MaterialTheme.typography.paragraph
-                .copy(color = MaterialTheme.colors.primary)
+                .copy(color = MaterialTheme.colors.primary),
+            modifier = Modifier.clickable(onClick = {
+                navController.navigate("paymentDateSelection")
+            })
         )
     }
 }

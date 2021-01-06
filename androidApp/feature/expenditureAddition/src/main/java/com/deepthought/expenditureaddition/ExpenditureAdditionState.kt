@@ -6,6 +6,11 @@ import dohun.kim.kinda.kinda_core.KindaSideEffect
 import dohun.kim.kinda.kinda_core.KindaState
 
 data class ExpenditureAdditionState(
+    val name: String = "",
+    val price: String = "",
+
+    val paymentDate: Int? = null,
+
     val expenditureCategory: ExpenditureCategory? = null
 ) : KindaState
 

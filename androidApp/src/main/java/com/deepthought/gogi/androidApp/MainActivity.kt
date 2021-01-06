@@ -16,6 +16,7 @@ import com.deepthought.expendituredetail.ExpenditureDetailPage
 import com.deepthought.home.HomePage
 import com.deepthought.inputname.InputNamePage
 import com.deepthought.notification.NotificationPage
+import com.deepthought.paymentdateselection.PaymentDateSelectionPage
 import com.deepthought.splash.SplashPage
 import org.koin.androidx.compose.getViewModel
 
@@ -77,6 +78,13 @@ class MainActivity : AppCompatActivity() {
 
                     composable("expenditureCategoryAddition") {
                         ExpenditureCategoryAdditionPage(
+                            viewModel = getViewModel(),
+                            navController = navController
+                        )
+                    }
+
+                    composable("paymentDateSelection") {
+                        PaymentDateSelectionPage(
                             viewModel = getViewModel(),
                             navController = navController
                         )

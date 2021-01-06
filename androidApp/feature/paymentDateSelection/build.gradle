@@ -1,0 +1,12 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+apply from: rootProject.file('gradle/feature.gradle')
+
+dependencies {
+    implementation project(':androidApp:core')
+
+    testImplementation project(path: ':androidApp:core', configuration: 'testDependencies')
+}

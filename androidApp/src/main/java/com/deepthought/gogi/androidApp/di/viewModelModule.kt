@@ -8,6 +8,7 @@ import com.deepthought.expendituredetail.ExpenditureDetailViewModel
 import com.deepthought.home.HomeViewModel
 import com.deepthought.inputname.InputNameViewModel
 import com.deepthought.notification.NotificationViewModel
+import com.deepthought.paymentdateselection.PaymentDateSelectionViewModel
 import com.deepthought.splash.SplashViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -31,4 +32,6 @@ val viewModelModule = module {
     viewModel { ExpenditureCategorySelectionViewModel(get()) }
 
     viewModel { ExpenditureCategoryAdditionViewModel(get()) }
+
+    viewModel { PaymentDateSelectionViewModel() }
 }

@@ -34,4 +34,4 @@ include(":androidApp:feature:expenditureDetail")
 include(":androidApp:feature:expenditureAddition")
 include(":androidApp:feature:expenditureCategorySelection")
 include(":androidApp:feature:expenditureCategoryAddition")
-
+include(":androidApp:feature:paymentDateSelection")
