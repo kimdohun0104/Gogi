@@ -16,8 +16,8 @@ class GetPaidExpendituresUseCase(
             val expenditures = expenditureRepository.getExpenditures(forceUpdate)
             val todayDate = Calendar.getInstance()[Calendar.DATE]
 
-            expenditures.filter { it.paymentDate < todayDate }
+            expenditures.filter { it.paymentDate.date < todayDate }
                 .map { it.toExpenditure() }
-                .sortedBy { it.paymentDate }
+                .sortedBy { it.paymentDate.date }
         }
 }

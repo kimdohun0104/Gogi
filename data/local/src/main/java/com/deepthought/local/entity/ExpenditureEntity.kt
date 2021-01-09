@@ -9,7 +9,7 @@ data class ExpenditureEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
 
-    val paymentDate: Int,
+    val paymentDate: PaymentDateEntity,
 
     val name: String,
 

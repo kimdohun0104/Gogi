@@ -21,8 +21,8 @@ fun PaymentDateSelectionPage(
     navController: NavController
 ) {
     viewModel.event {
-        it.popWithDate.getData()?.let { date ->
-            navController.setToSavedState("paymentDate", date)
+        it.popWithDate.getData()?.let { paymentDate ->
+            navController.setToSavedState("paymentDate", paymentDate)
             navController.popBackStack()
         }
     }

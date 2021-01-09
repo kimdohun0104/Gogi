@@ -7,7 +7,7 @@ import com.deepthought.local.entity.ExpenditureEntity
 
 fun ExpenditureEntity.toExpenditure() =
     Expenditure(
-        paymentDate = paymentDate,
+        paymentDate = paymentDate.toPaymentDate(),
         name = name,
         price = price,
         expenditureCategory = expenditureCategory.toExpenditureCategory()

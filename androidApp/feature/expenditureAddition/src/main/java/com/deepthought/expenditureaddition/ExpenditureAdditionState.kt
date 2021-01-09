@@ -1,6 +1,7 @@
 package com.deepthought.expenditureaddition
 
 import com.deepthought.bridge.model.ExpenditureCategory
+import com.deepthought.bridge.model.PaymentDate
 import dohun.kim.kinda.kinda_core.KindaEvent
 import dohun.kim.kinda.kinda_core.KindaSideEffect
 import dohun.kim.kinda.kinda_core.KindaState
@@ -9,7 +10,7 @@ data class ExpenditureAdditionState(
     val name: String = "",
     val price: String = "",
 
-    val paymentDate: Int? = null,
+    val paymentDate: PaymentDate? = null,
 
     val expenditureCategory: ExpenditureCategory? = null
 ) : KindaState
@@ -20,7 +21,7 @@ sealed class ExpenditureAdditionEvent : KindaEvent {
     ) : ExpenditureAdditionEvent()
 
     data class OnSelectPaymentDate(
-        val paymentDate: Int
+        val paymentDate: PaymentDate
     ) : ExpenditureAdditionEvent()
 }
 

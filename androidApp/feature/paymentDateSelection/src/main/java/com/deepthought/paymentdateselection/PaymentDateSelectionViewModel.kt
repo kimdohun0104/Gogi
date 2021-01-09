@@ -1,5 +1,6 @@
 package com.deepthought.paymentdateselection
 
+import com.deepthought.bridge.model.PaymentDate
 import dohun.kim.kinda.kinda_android.KindaViewModel
 import dohun.kim.kinda.kinda_core.Event
 import dohun.kim.kinda.kinda_core.KindaReducer
@@ -46,8 +47,7 @@ class PaymentDateSelectionViewModel :
             }
 
             whenEvent<PaymentDateSelectionEvent.OnClickConfirm> {
-                val selectedDate = if (isLastDay) 31 else date.toInt()
-                next(copy(popWithDate = Event(selectedDate)))
+                next(copy(popWithDate = Event(PaymentDate(date.toIntOrNull() ?: -1, isLastDay))))
             }
         }
 

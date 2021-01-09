@@ -1,5 +1,6 @@
 package com.deepthought.paymentdateselection
 
+import com.deepthought.bridge.model.PaymentDate
 import dohun.kim.kinda.kinda_core.Event
 import dohun.kim.kinda.kinda_core.KindaEvent
 import dohun.kim.kinda.kinda_core.KindaSideEffect
@@ -13,7 +14,7 @@ data class PaymentDateSelectionState(
 
     val dateTextFieldErrorText: String = "",
 
-    val popWithDate: Event<Int> = Event()
+    val popWithDate: Event<PaymentDate> = Event()
 ) : KindaState
 
 sealed class PaymentDateSelectionEvent: KindaEvent {

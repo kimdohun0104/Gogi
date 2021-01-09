@@ -13,6 +13,7 @@ import androidx.compose.ui.window.Dialog
 import androidx.navigation.NavController
 import androidx.navigation.compose.navigate
 import com.deepthought.bridge.model.ExpenditureCategory
+import com.deepthought.bridge.model.PaymentDate
 import com.deepthought.core.common.CommonTopBar
 import com.deepthought.core.ext.getFromSavedState
 import com.deepthought.core.ext.observeFromSavedState
@@ -32,7 +33,8 @@ fun ExpenditureAdditionPage(
         callback = {
             viewModel.intent(ExpenditureAdditionEvent.OnSelectExpenditureCategory(it))
         })
-    navController.observeFromSavedState<Int>(
+
+    navController.observeFromSavedState<PaymentDate>(
         key = "paymentDate",
         callback = {
             viewModel.intent(ExpenditureAdditionEvent.OnSelectPaymentDate(it))

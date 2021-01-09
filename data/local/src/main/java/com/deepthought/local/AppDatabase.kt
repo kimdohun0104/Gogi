@@ -8,6 +8,7 @@ import com.deepthought.local.dao.ExpenditureCategoryDao
 import com.deepthought.local.dao.ExpenditureDao
 import com.deepthought.local.entity.ExpenditureCategoryEntity
 import com.deepthought.local.entity.ExpenditureEntity
+import com.deepthought.local.entity.PaymentDateEntity
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -18,7 +19,7 @@ import kotlinx.serialization.json.Json
         ExpenditureCategoryEntity::class
     ],
     exportSchema = false,
-    version = 1
+    version = 2
 )
 @TypeConverters(DatabaseTypeConverter::class)
 abstract class AppDatabase : RoomDatabase() {
@@ -38,4 +39,12 @@ class DatabaseTypeConverter {
     @TypeConverter
     fun fromExpenditureCategoryToString(expenditureCategoryEntity: ExpenditureCategoryEntity) =
         Json.encodeToString(expenditureCategoryEntity)
+
+    @TypeConverter
+    fun fromStringToPaymentDate(string: String) =
+        Json.decodeFromString<PaymentDateEntity>(string)
+
+    @TypeConverter
+    fun fromPaymentDateToString(paymentDateEntity: PaymentDateEntity) =
+        Json.encodeToString(paymentDateEntity)
 }

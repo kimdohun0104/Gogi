@@ -44,7 +44,7 @@ fun ExpenditureSection(
                     groupByPaymentDate[date]?.let { expendituresByDate ->
                         val isLastItem = groupByPaymentDate.size - 1 == index
                         ExpenditureDateSection(
-                            paymentDate = date,
+                            paymentDate = date.date,
                             expenditures = expendituresByDate,
                             isLastItem = isLastItem
                         )

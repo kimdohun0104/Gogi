@@ -50,7 +50,7 @@ class PaymentDateSelectionViewModelTest :
     fun `OnClickConfirm, When isLastDay is true, Set popWithDate value 31`() {
         viewModel.intent(PaymentDateSelectionEvent.OnClickLastDay)
         PaymentDateSelectionEvent.OnClickConfirm expectState {
-            assertEquals(31, it.popWithDate.peekData())
+            assertTrue(it.popWithDate.peekData()?.isLastDay == true)
         }
     }
 
@@ -58,7 +58,7 @@ class PaymentDateSelectionViewModelTest :
     fun `OnClickConfirm, When isLastDay is false, Set popWithDate value to entered value`() {
         viewModel.intent(PaymentDateSelectionEvent.OnEnterPaymentDate("24"))
         PaymentDateSelectionEvent.OnClickConfirm expectState {
-            assertEquals(24, it.popWithDate.peekData())
+            assertEquals(24, it.popWithDate.peekData()?.date)
         }
     }
 }

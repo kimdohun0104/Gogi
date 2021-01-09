@@ -11,6 +11,7 @@ import com.deepthought.core.common.CommonTopBar
 import com.deepthought.core.theme.colorGray500
 import com.deepthought.bridge.model.Expenditure
 import com.deepthought.bridge.model.ExpenditureCategory
+import com.deepthought.bridge.model.PaymentDate
 import com.deepthought.expenditure.components.ExpenditureCategoryChipRow
 import com.deepthought.expenditure.components.ExpenditureList
 import com.deepthought.expenditure.item.ExpenditureCategoryItem
@@ -47,10 +48,10 @@ fun ExpenditurePage(
 
             ExpenditureList(
                 expenditures = listOf(
-                    Expenditure(10, "김도훈", 1000, ExpenditureCategory(0, "문화/컨텐츠")),
-                    Expenditure(10, "김도훈", 1000, ExpenditureCategory(0, "문화/컨텐츠")),
-                    Expenditure(10, "김도훈", 1000, ExpenditureCategory(0, "문화/컨텐츠")),
-                    Expenditure(10, "김도훈", 1000, ExpenditureCategory(0, "문화/컨텐츠")),
+                    Expenditure(PaymentDate(date = 10, isLastDay = false), "김도훈", 1000, ExpenditureCategory(0, "문화/컨텐츠")),
+                    Expenditure(PaymentDate(date = 10, isLastDay = false), "김도훈", 1000, ExpenditureCategory(0, "문화/컨텐츠")),
+                    Expenditure(PaymentDate(date = 10, isLastDay = false), "김도훈", 1000, ExpenditureCategory(0, "문화/컨텐츠")),
+                    Expenditure(PaymentDate(date = 10, isLastDay = false), "김도훈", 1000, ExpenditureCategory(0, "문화/컨텐츠")),
                 )
             )
         }
