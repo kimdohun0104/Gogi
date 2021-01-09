@@ -16,6 +16,10 @@ class ExpenditureAdditionViewModel :
             whenEvent<ExpenditureAdditionEvent.OnSelectExpenditureCategory> {
                 next(copy(expenditureCategory = it.expenditureCategory))
             }
+
+            whenEvent<ExpenditureAdditionEvent.OnSelectPaymentDate> {
+                next(copy(paymentDate = it.paymentDate))
+            }
         }
 
     override val sideEffectHandler: KindaSideEffectHandler<ExpenditureAdditionState, ExpenditureAdditionEvent, ExpenditureAdditionSideEffect>

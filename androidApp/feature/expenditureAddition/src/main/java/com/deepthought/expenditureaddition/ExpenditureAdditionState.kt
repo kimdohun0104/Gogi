@@ -18,6 +18,10 @@ sealed class ExpenditureAdditionEvent : KindaEvent {
     data class OnSelectExpenditureCategory(
         val expenditureCategory: ExpenditureCategory
     ) : ExpenditureAdditionEvent()
+
+    data class OnSelectPaymentDate(
+        val paymentDate: Int
+    ) : ExpenditureAdditionEvent()
 }
 
 sealed class ExpenditureAdditionSideEffect : KindaSideEffect {

@@ -32,6 +32,11 @@ fun ExpenditureAdditionPage(
         callback = {
             viewModel.intent(ExpenditureAdditionEvent.OnSelectExpenditureCategory(it))
         })
+    navController.observeFromSavedState<Int>(
+        key = "paymentDate",
+        callback = {
+            viewModel.intent(ExpenditureAdditionEvent.OnSelectPaymentDate(it))
+        })
 
     Scaffold(
         topBar = {
@@ -47,6 +52,7 @@ fun ExpenditureAdditionPage(
             ExpenditureAdditionPriceTextField()
             Box(modifier = Modifier.height(24.dp))
             ExpenditureAdditionSelectPaymentDay(
+                viewModel = viewModel,
                 navController = navController
             )
             Box(modifier = Modifier.height(24.dp))
@@ -99,8 +105,11 @@ private fun ExpenditureAdditionPriceTextField() {
 
 @Composable
 private fun ExpenditureAdditionSelectPaymentDay(
+    viewModel: ExpenditureAdditionViewModel,
     navController: NavController
 ) {
+    val state = viewModel.state()
+
     Text(
         "지출일",
         style = MaterialTheme.typography.captionRegular
@@ -108,7 +117,7 @@ private fun ExpenditureAdditionSelectPaymentDay(
     )
     Row {
         Text(
-            text = "말일",
+            text = state.paymentDate?.toString() ?: "",
             style = MaterialTheme.typography.paragraphRegular,
             modifier = Modifier.weight(1f)
         )
