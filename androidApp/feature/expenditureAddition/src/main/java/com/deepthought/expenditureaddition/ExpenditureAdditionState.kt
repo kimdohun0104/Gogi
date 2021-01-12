@@ -23,8 +23,13 @@ sealed class ExpenditureAdditionEvent : KindaEvent {
     data class OnSelectPaymentDate(
         val paymentDate: PaymentDate
     ) : ExpenditureAdditionEvent()
+
+    data class OnEnterName(val name: String) : ExpenditureAdditionEvent()
+
+    data class OnEnterPrice(val price: String) : ExpenditureAdditionEvent()
 }
 
 sealed class ExpenditureAdditionSideEffect : KindaSideEffect {
 
+    object InsertExpenditure : ExpenditureAdditionSideEffect()
 }

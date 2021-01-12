@@ -5,6 +5,8 @@ import com.deepthought.local.entity.ExpenditureEntity
 
 interface ExpenditureRepository {
 
+    suspend fun insertExpenditure(expenditureEntity: ExpenditureEntity)
+
     suspend fun getExpenditures(forceUpdate: Boolean): List<ExpenditureEntity>
 
     suspend fun getTotalPriceOfExpenditures(): Int
@@ -15,6 +17,11 @@ class ExpenditureRepositoryImpl(
 ) : ExpenditureRepository {
 
     private val cachedExpenditures: ArrayList<ExpenditureEntity> = arrayListOf()
+
+    override suspend fun insertExpenditure(expenditureEntity: ExpenditureEntity) {
+        cachedExpenditures.add(expenditureEntity)
+        expenditureDao.insertExpenditure(expenditureEntity)
+    }
 
     override suspend fun getExpenditures(forceUpdate: Boolean): List<ExpenditureEntity> {
         if (forceUpdate || cachedExpenditures.isNullOrEmpty()) {

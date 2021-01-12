@@ -8,3 +8,9 @@ fun PaymentDateEntity.toPaymentDate() =
         isLastDay = isLastDay,
         date = date
     )
+
+fun PaymentDate.toEntity() =
+    PaymentDateEntity(
+        date = date,
+        isLastDay = isLastDay
+    )

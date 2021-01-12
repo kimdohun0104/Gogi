@@ -48,10 +48,10 @@ fun ExpenditurePage(
 
             ExpenditureList(
                 expenditures = listOf(
-                    Expenditure(PaymentDate(date = 10, isLastDay = false), "김도훈", 1000, ExpenditureCategory(0, "문화/컨텐츠")),
-                    Expenditure(PaymentDate(date = 10, isLastDay = false), "김도훈", 1000, ExpenditureCategory(0, "문화/컨텐츠")),
-                    Expenditure(PaymentDate(date = 10, isLastDay = false), "김도훈", 1000, ExpenditureCategory(0, "문화/컨텐츠")),
-                    Expenditure(PaymentDate(date = 10, isLastDay = false), "김도훈", 1000, ExpenditureCategory(0, "문화/컨텐츠")),
+                    Expenditure(0, PaymentDate(date = 10, isLastDay = false), "김도훈", 1000, ExpenditureCategory(0, "문화/컨텐츠")),
+                    Expenditure(1, PaymentDate(date = 10, isLastDay = false), "김도훈", 1000, ExpenditureCategory(0, "문화/컨텐츠")),
+                    Expenditure(2, PaymentDate(date = 10, isLastDay = false), "김도훈", 1000, ExpenditureCategory(0, "문화/컨텐츠")),
+                    Expenditure(3, PaymentDate(date = 10, isLastDay = false), "김도훈", 1000, ExpenditureCategory(0, "문화/컨텐츠")),
                 )
             )
         }

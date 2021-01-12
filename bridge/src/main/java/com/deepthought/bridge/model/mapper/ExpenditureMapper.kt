@@ -7,8 +7,18 @@ import com.deepthought.local.entity.ExpenditureEntity
 
 fun ExpenditureEntity.toExpenditure() =
     Expenditure(
+        id = id,
         paymentDate = paymentDate.toPaymentDate(),
         name = name,
         price = price,
         expenditureCategory = expenditureCategory.toExpenditureCategory()
+    )
+
+fun Expenditure.toEntity() =
+    ExpenditureEntity(
+        id = id,
+        paymentDate = paymentDate.toEntity(),
+        name = name,
+        price = price,
+        expenditureCategory = expenditureCategory.toEntity()
     )

@@ -20,6 +20,8 @@ val useCaseModule = module {
 
     factory { GetTodayExpendituresUseCase(get()) }
 
+    factory { InsertExpenditureUseCase(get()) }
+
     /**
      * Expenditure category
      */
