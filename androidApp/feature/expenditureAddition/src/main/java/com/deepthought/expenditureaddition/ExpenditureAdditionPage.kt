@@ -12,12 +12,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.navigation.NavController
 import androidx.navigation.compose.navigate
+import androidx.navigation.compose.popUpTo
 import com.deepthought.bridge.model.ExpenditureCategory
 import com.deepthought.bridge.model.PaymentDate
 import com.deepthought.core.common.CommonTopBar
-import com.deepthought.core.ext.getFromSavedState
-import com.deepthought.core.ext.observeFromSavedState
-import com.deepthought.core.ext.state
+import com.deepthought.core.ext.*
 import com.deepthought.core.theme.captionRegular
 import com.deepthought.core.theme.colorGray500
 import com.deepthought.core.theme.paragraph
@@ -28,6 +27,12 @@ fun ExpenditureAdditionPage(
     viewModel: ExpenditureAdditionViewModel,
     navController: NavController
 ) {
+    viewModel.event {
+        it.popBackStack.getData()?.let {
+            navController.navigateBackTo("home")
+        }
+    }
+
     navController.observeFromSavedState<ExpenditureCategory>(
         key = "expenditureCategory",
         callback = {
@@ -49,9 +54,9 @@ fun ExpenditureAdditionPage(
             modifier = Modifier.padding(vertical = 24.dp, horizontal = 32.dp)
         ) {
 
-            ExpenditureAdditionNameTextField()
+            ExpenditureAdditionNameTextField(viewModel)
             Box(modifier = Modifier.height(24.dp))
-            ExpenditureAdditionPriceTextField()
+            ExpenditureAdditionPriceTextField(viewModel)
             Box(modifier = Modifier.height(24.dp))
             ExpenditureAdditionSelectPaymentDay(
                 viewModel = viewModel,
@@ -71,37 +76,51 @@ private fun ExpenditureAdditionTopBar(
     viewModel: ExpenditureAdditionViewModel,
     navController: NavController
 ) {
+    val state = viewModel.state()
+
     CommonTopBar(
         title = "지출 추가",
         navigationIcon = R.drawable.ic_close,
         onClickNavigation = { navController.popBackStack() },
-        action = "확인"
+        action = "확인",
+        isActionEnabled = state.isConfirmEnabled,
+        onClickAction = {
+            viewModel.intent(ExpenditureAdditionEvent.AttemptInsertExpenditure)
+        }
     )
 }
 
 @Composable
-private fun ExpenditureAdditionNameTextField() {
+private fun ExpenditureAdditionNameTextField(
+    viewModel: ExpenditureAdditionViewModel
+) {
+    val state = viewModel.state()
+
     TextField(
-        value = "",
+        value = state.name,
         maxLines = 1,
         modifier = Modifier.fillMaxWidth(),
         textStyle = MaterialTheme.typography.paragraphRegular,
         label = { Text(text = "이름") },
         onValueChange = {
-
+            viewModel.intent(ExpenditureAdditionEvent.OnEnterName(it))
         })
 }
 
 @Composable
-private fun ExpenditureAdditionPriceTextField() {
+private fun ExpenditureAdditionPriceTextField(
+    viewModel: ExpenditureAdditionViewModel
+) {
+    val state = viewModel.state()
+
     TextField(
-        value = "",
+        value = state.price,
         maxLines = 1,
         modifier = Modifier.fillMaxWidth(),
         textStyle = MaterialTheme.typography.paragraphRegular,
         label = { Text(text = "금액") },
         onValueChange = {
-
+            viewModel.intent(ExpenditureAdditionEvent.OnEnterPrice(it))
         })
 }
 

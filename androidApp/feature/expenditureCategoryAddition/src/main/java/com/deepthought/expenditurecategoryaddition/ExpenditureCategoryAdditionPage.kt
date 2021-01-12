@@ -15,6 +15,7 @@ import androidx.navigation.compose.navigate
 import androidx.navigation.compose.popUpTo
 import com.deepthought.core.common.CommonTopBar
 import com.deepthought.core.ext.event
+import com.deepthought.core.ext.navigateBackTo
 import com.deepthought.core.ext.state
 import com.deepthought.core.theme.paragraphRegular
 
@@ -25,9 +26,7 @@ fun ExpenditureCategoryAdditionPage(
 ) {
     viewModel.event {
         it.popBackStack.getData()?.let {
-            navController.navigate("expenditureCategorySelection") {
-                popUpTo("expenditureAddition") {}
-            }
+            navController.navigateBackTo("expenditureCategorySelection")
         }
     }
 
