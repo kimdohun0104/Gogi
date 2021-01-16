@@ -28,6 +28,8 @@ dependencies {
 
     api Dependency.AndroidX.Navigation.compose
 
+    implementation Dependency.Test.mockito
+
     testImplementation Dependency.Test.junit
     testImplementation Dependency.Test.mockito
     testImplementation Dependency.Test.mockitoInline
