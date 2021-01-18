@@ -29,6 +29,7 @@
             <option value="$PROJECT_DIR$/data/local" />
             <option value="$PROJECT_DIR$/data/preference" />
             <option value="$PROJECT_DIR$/data/repository" />
+            <option value="$PROJECT_DIR$/ponyo" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

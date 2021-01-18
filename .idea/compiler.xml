@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="11" />
+    <bytecodeTargetLevel target="1.7">
+      <module name="Gogi.androidApp" target="11" />
+      <module name="Gogi.androidApp.core" target="11" />
+      <module name="Gogi.androidApp.feature.expenditure" target="11" />
+      <module name="Gogi.androidApp.feature.expenditureAddition" target="11" />
+      <module name="Gogi.androidApp.feature.expenditureCategoryAddition" target="11" />
+      <module name="Gogi.androidApp.feature.expenditureCategorySelection" target="11" />
+      <module name="Gogi.androidApp.feature.expenditureDetail" target="11" />
+      <module name="Gogi.androidApp.feature.home" target="11" />
+      <module name="Gogi.androidApp.feature.inputName" target="11" />
+      <module name="Gogi.androidApp.feature.notification" target="11" />
+      <module name="Gogi.androidApp.feature.paymentDateSelection" target="11" />
+      <module name="Gogi.androidApp.feature.splash" target="11" />
+      <module name="Gogi.bridge" target="11" />
+      <module name="Gogi.buildSrc" target="11" />
+      <module name="Gogi.data.local" target="11" />
+      <module name="Gogi.data.preference" target="11" />
+      <module name="Gogi.data.repository" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
