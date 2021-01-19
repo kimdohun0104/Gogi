@@ -12,7 +12,7 @@ configurations {
 }
 
 dependencies {
-    api project(':bridge')
+    api project(':domain')
 
     api Dependency.timber
 

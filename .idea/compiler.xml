@@ -14,11 +14,11 @@
       <module name="Gogi.androidApp.feature.notification" target="11" />
       <module name="Gogi.androidApp.feature.paymentDateSelection" target="11" />
       <module name="Gogi.androidApp.feature.splash" target="11" />
-      <module name="Gogi.bridge" target="11" />
       <module name="Gogi.buildSrc" target="11" />
       <module name="Gogi.data.local" target="11" />
       <module name="Gogi.data.preference" target="11" />
       <module name="Gogi.data.repository" target="11" />
+      <module name="Gogi.domain" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

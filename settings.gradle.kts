@@ -18,7 +18,7 @@ rootProject.name = "Gogi"
 
 include(":androidApp")
 
-include(":bridge")
+include(":domain")
 
 include(":data:preference")
 include(":data:local")
