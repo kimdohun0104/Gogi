@@ -6,7 +6,7 @@ object Dependency {
     const val material = "com.google.android.material:material:1.2.1"
 
     object Kotlin {
-        const val version = "1.4.10"
+        const val version = "1.4.30"
 
         const val serializationJson = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1"
         const val coroutine = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2"
