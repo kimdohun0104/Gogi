@@ -2,7 +2,6 @@ pluginManagement {
     repositories {
         gradlePluginPortal()
         google()
-        jcenter()
         mavenCentral()
     }
     resolutionStrategy {
@@ -35,4 +34,3 @@ include(":androidApp:feature:expenditureAddition")
 include(":androidApp:feature:expenditureCategorySelection")
 include(":androidApp:feature:expenditureCategoryAddition")
 include(":androidApp:feature:paymentDateSelection")
-include(":ponyo")
